@@ -1,0 +1,41 @@
+/*==== Primitive Colors ===*/
+// grey
+$grey-50: #f8f8f8;
+$grey-100: #DDDDDD;
+$grey-200: #c2c2c2;
+$grey-300: #a7a7a7;
+$grey-400: #888888;
+$grey-500: #707070;
+$grey-600: #636363;
+$grey-700: #555555;
+$grey-800: #3a3a3a;
+$grey-900: #1e1e1e;
+
+// yellow
+$yellow-50: #fffbea;
+$yellow-100: #fff3c4;
+$yellow-200: #fce588;
+$yellow-300: #fadb5f;
+$yellow-400: #f7c948;
+$yellow-500: #f0b429;
+$yellow-600: #dfa91c;
+$yellow-700: #b6850d;
+$yellow-800: #8f6b06;
+$yellow-900: #6e5100;
+
+/*=== Semantic Colors ===*/
+// foundations/background
+$f-bg-default-light: $grey-50;
+$f-bg-default-dark: $grey-900;
+$f-bg-theme-switcher-light: $yellow-300;
+$f-bg-theme-switcher-dark: $yellow-300;
+
+// foundations/text
+$f-text-default-light: $grey-900;
+$f-text-default-dark: $grey-50;
+
+// foundations/shadow
+$f-shadow-global-nav-light: $grey-200;
+$f-shadow-global-nav-dark: $grey-800;
+$f-shadow-theme-switcher-light: $grey-900;
+$f-shadow-theme-switcher-dark: $grey-200;

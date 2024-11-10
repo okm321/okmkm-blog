@@ -1,0 +1,10 @@
+@use '@styles/global' as g;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: calc(var(--space_base) * 3);
+  position: relative;
+}
