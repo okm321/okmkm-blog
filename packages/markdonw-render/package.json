@@ -1,0 +1,9 @@
+{
+  "name": "@packages/markdown-render",
+  "license": "UNLICENSED",
+  "main": "index.ts",
+  "private": true,
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

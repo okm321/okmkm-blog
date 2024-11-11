@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/src/components/shared/Main/Main.module.scss.module.css"],"sourcesContent":[".main{padding:calc(var(--space_base)*16) calc(var(--space_base)*6)}"],"names":[],"mappings":"AAAA"}},
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

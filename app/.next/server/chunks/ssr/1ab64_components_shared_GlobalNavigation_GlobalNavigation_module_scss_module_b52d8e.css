@@ -1,0 +1,34 @@
+/* [project]/app/src/components/shared/GlobalNavigation/GlobalNavigation.module.scss.module.css [app-client] (css) */
+.GlobalNavigation-module-scss-module__G6VNRG__navigation {
+  display: flex;
+  align-items: center;
+}
+
+.GlobalNavigation-module-scss-module__G6VNRG__navigationList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(var(--space_base) * 8);
+}
+
+.GlobalNavigation-module-scss-module__G6VNRG__navigationList__item {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  box-shadow: var(--shadow_global-nav);
+  transition: all .3s;
+  position: relative;
+}
+
+.GlobalNavigation-module-scss-module__G6VNRG__navigationList__item:hover {
+  background-color: var(--color_f-bg-reverse-default);
+  color: var(--color_f-text-reverse-default);
+  box-shadow: var(--shadow_global-nav-reverse);
+  justify-content: center;
+  transition: all .3s;
+}
+
+/*# sourceMappingURL=1ab64_components_shared_GlobalNavigation_GlobalNavigation_module_scss_module_b52d8e.css.map*/
