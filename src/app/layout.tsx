@@ -3,6 +3,8 @@ import { Potta_One } from "next/font/google";
 import "@/styles/styles.scss";
 import type { Metadata } from "next";
 import { Header } from "@/components/shared/Header";
+import { Layout } from "@/components/shared/Layout";
+import { Main } from "@/components/shared/Main";
 
 const PottaOneFont = Potta_One({
 	weight: "400",
@@ -31,8 +33,11 @@ export default function RootLayout({
 			</head>
 			<body className={`${PottaOneFont.variable}`}>
 				<ColorThemeProvider>
-					<Header />
-					{children}
+					<Layout>
+						<Header />
+						<Main>{children}</Main>
+						<footer>footer</footer>
+					</Layout>
 				</ColorThemeProvider>
 			</body>
 		</html>
