@@ -1,1 +1,1 @@
-export { TestFile } from "./components/TestFile";
+export { MarkdownRenderer } from "./components/MarkdownRenderer";

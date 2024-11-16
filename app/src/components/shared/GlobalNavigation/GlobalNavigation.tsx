@@ -16,7 +16,7 @@ const NavigationList: Navigation[] = [
 	},
 	{
 		title: "zenn",
-		path: "/#",
+		path: "/zenn",
 		icon: <ZennIcon fontSize="28px" />,
 	},
 	{

@@ -1,0 +1,9 @@
+.inlineCode {
+  padding: 0px 4px;
+  border-radius: 4px;
+  margin-inline: 2px;
+  background-color: var(--c-inline-code-bg);
+  color: var(--c-inline-code-text);
+  font-size: var(--font-size-sm);
+  display: inline-block;
+}

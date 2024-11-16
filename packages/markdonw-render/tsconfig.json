@@ -1,5 +1,10 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "jsx": "react-jsx"
+    "paths": {
+      "shared-styles/*": [
+        "../packages/shared-styles/*"
+      ]
+    }
   }
 }

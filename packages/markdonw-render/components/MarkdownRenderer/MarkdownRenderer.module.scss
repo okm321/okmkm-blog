@@ -1,0 +1,59 @@
+@use 'shared-styles/global' as g;
+
+.markdown {
+  overflow-wrap: break-word;
+
+  &> :first-child {
+    margin-top: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    font-size: var(--font-size_xxxl);
+    margin-top: calc(var(--space_base) * 15);
+    margin-bottom: calc(var(--space_base) * 4);
+    padding-bottom: calc(var(--space_base) * 2);
+    border-bottom: 1px solid var(--color_heading-border);
+  }
+
+  h2 {
+    font-size: var(--font-size_xxl);
+    margin-top: calc(var(--space_base) * 14);
+    margin-bottom: calc(var(--space_base) * 4);
+    padding-bottom: calc(var(--space_base) * 2);
+    border-bottom: 1px solid var(--color_heading-border);
+  }
+
+  h3 {
+    font-size: var(--font-size_xl);
+    margin-top: calc(var(--space_base) * 11);
+    margin-bottom: calc(var(--space_base) * 2);
+  }
+
+  h4 {
+    font-size: var(--font-size_l);
+    margin-top: calc(var(--space_base) * 10);
+    margin-bottom: calc(var(--space_base) * 2);
+  }
+
+  h5 {
+    font-size: var(--font-size_base);
+    margin-top: calc(var(--space_base) * 8);
+    margin-bottom: calc(var(--space_base) * 1);
+  }
+
+  h6 {
+    font-size: var(--font-size_base);
+    margin-top: calc(var(--space_base) * 5);
+    margin-bottom: calc(var(--space_base) * 1);
+  }
+}
