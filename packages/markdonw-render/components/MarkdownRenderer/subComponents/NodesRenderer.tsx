@@ -14,6 +14,7 @@ import { DeleteNode } from "./DeleteNode";
 import { TableNode } from "./TableNode";
 import { ThemanticBreakNode } from "./ThemanticBreakNode";
 import { HTMLNode } from "./HTMLNode";
+import { CodeNode } from "./CodeNode";
 
 export const NodesRenderer: FC<{ nodes: RootContent[] }> = ({ nodes }) => {
 	return nodes.map((node, index) => {
@@ -49,7 +50,8 @@ export const NodesRenderer: FC<{ nodes: RootContent[] }> = ({ nodes }) => {
 				return <ImageNode key={`${node.type}-${index}`} node={node} />;
 			}
 			case "code": {
-				return <>code</>;
+				// @ts-expect-error Server Component
+				return <CodeNode key={`${node.type}-${index}`} node={node} />;
 			}
 			case "delete": {
 				return <DeleteNode key={`${node.type}-${index}`} node={node} />;

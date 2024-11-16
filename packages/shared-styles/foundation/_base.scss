@@ -11,6 +11,14 @@
   --font-size_s: #{g.$font-size-s};
   --font-size_xs: #{g.$font-size-xs};
   --font-size_xxs: #{g.$font-size-xxs};
+
+  --color_code-block-diff-remove-bg: #{g.$red-800};
+  --color_code-block-diff-remove-symbol: #{g.$red-300};
+  --color_code-block-diff-add-bg: #{g.$green-700};
+  --color_code-block-diff-add-symbol: #{g.$green-300};
+  --color_code-block-highlighted-bg: #{g.$grey-200};
+  --color_code-block-everforest-bg: #2d353b;
+  --color_code-block-everforest-text: #d3c6aa;
 }
 
 :root[data-color-theme='light'] {
@@ -20,6 +28,12 @@
   --color_f-text-reverse-default: #{g.$grey-50};
   --color_f-bg-theme-switcher: #{g.$yellow-300};
   --color_heading-border: #{g.$grey-200};
+  --color_inline-code-bg: #{g.$grey-100};
+  --color_blockquote-border: #{g.$grey-400};
+  --color_blockquote-text: #{g.$grey-600};
+  --color_hr: #{g.$grey-200};
+  --color_table-header-bg: #{g.$grey-100};
+  --color_table-border: #{g.$grey-200};
 
   --image_logo: url("/myface_light.svg");
   --image_theme-switch: url("/theme-switch_light.svg");
@@ -36,6 +50,12 @@
   --color_f-text-reverse-default: #{g.$grey-900};
   --color_f-bg-theme-switcher: #{g.$yellow-300};
   --color_heading-border: #{g.$grey-700};
+  --color_inline-code-bg: #{g.$grey-700};
+  --color_blockquote-border: #{g.$grey-500};
+  --color_blockquote-text: #{g.$grey-300};
+  --color_hr: #{g.$grey-700};
+  --color_table-header-bg: #{g.$grey-800};
+  --color_table-border: #{g.$grey-700};
 
   --image_logo: url("/myface_dark.svg");
   --image_theme-switch: url("/theme-switch_dark.svg");
@@ -55,6 +75,11 @@ html {
   background: var(--color_f-bg-default);
   color: var(--color_f-text-default);
   transition: background 0.3s;
+  font-size: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 

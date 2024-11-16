@@ -13,9 +13,11 @@
     "remark": "^15.0.1",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.0",
+    "shiki": "^1.23.0",
     "unified": "^11.0.5"
   },
   "devDependencies": {
+    "@shikijs/transformers": "^1.23.0",
     "@types/mdast": "4.0.3",
     "@types/node": "^20",
     "@types/react": "^18"

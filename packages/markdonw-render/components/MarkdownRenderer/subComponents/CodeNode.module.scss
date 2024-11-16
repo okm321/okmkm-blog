@@ -1,0 +1,81 @@
+@use 'shared-styles/global' as g;
+
+.codeBlock {
+  margin: 1.5em 0;
+  position: relative;
+
+  figcaption {
+    font-size: var(--font-size_s);
+    background-color: var(--color_code-block-everforest-bg);
+    color: var(--color_code-block-everforest-text);
+    width: fit-content;
+    padding: 0.5em 1em;
+    border-radius: 8px 8px 0 0
+  }
+
+  pre {
+    font-size: 0.95rem;
+    overflow-x: auto;
+    padding: 1.5em 0;
+    border-radius: 8px;
+
+    &[data-filename] {
+      border-radius: 0 8px 8px 8px;
+    }
+
+    code {
+      padding: 0 1.5em;
+      display: block;
+      width: fit-content;
+      min-width: 100%;
+      line-height: 1.4;
+
+      :global(.diff) {
+        margin: 0 -1.5em;
+        padding: 0 1.5em;
+        width: calc(100% + 3em);
+        display: inline-block;
+
+        &:before {
+          position: absolute;
+          left: 0.6em;
+        }
+      }
+
+      :global(.diff.remove) {
+        opacity: 0.7;
+        background-color: var(--color_code-block-diff-remove-bg);
+
+        &:before {
+          content: '-';
+          color: var(--color_code-block-diff-remove-symbol);
+        }
+      }
+
+      :global(.diff.add) {
+        background-color: var(--color_code-block-diff-add-bg);
+
+        &:before {
+          content: '+';
+          color: var(--color_code-block-diff-add-symbol);
+        }
+      }
+
+      :global(.highlighted) {
+
+
+        margin: 0 -1.5em;
+        padding: 0 1.5em;
+        width: calc(100% + 3em);
+        display: inline-block;
+        background-color: rgba(g.$grey-50, 0.5);
+      }
+    }
+  }
+
+  pre:has(code) {
+    position: relative;
+  }
+
+  // preの親の兄弟要素にfigcaptionがある場合、preの左上のborder-radiusを削除
+}

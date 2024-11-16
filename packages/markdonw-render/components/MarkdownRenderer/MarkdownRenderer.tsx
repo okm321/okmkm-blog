@@ -2,8 +2,9 @@ import { remark } from "remark";
 import type { RootContent, FootnoteDefinition, Root } from "mdast";
 import { NodesRenderer } from "./subComponents/NodesRenderer";
 import classes from "./MarkdownRenderer.module.scss";
+import remarkGfm from "remark-gfm";
 
-const parseMarkdown = remark();
+const parseMarkdown = remark().use(remarkGfm);
 
 type Props = { children: string };
 
@@ -30,8 +31,6 @@ export function MarkdownRenderer({ children }: Props) {
 	// const footnoteDefinitions = extractFootnoteDefinitions(mdastRoot.children);
 	//
 	// return <div>{children}</div>;
-
-	console.log("mdastRoot:", mdastRoot);
 
 	return (
 		<div>
