@@ -12,11 +12,13 @@
 	"dependencies": {
 		"@packages/markdown-render": "workspace:*",
 		"@packages/utils": "workspace:*",
+		"@types/three": "^0.170.0",
 		"contents-manager": "workspace:*",
 		"gray-matter": "^4.0.3",
 		"next": "15.0.3",
 		"react": "19.0.0-rc-66855b96-20241106",
-		"react-dom": "19.0.0-rc-66855b96-20241106"
+		"react-dom": "19.0.0-rc-66855b96-20241106",
+		"three": "^0.170.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
