@@ -1,5 +1,6 @@
 import { ColorThemeProvider } from "@/providers/ColorThemeProvider";
 import { Potta_One } from "next/font/google";
+import { M_PLUS_1p } from "next/font/google";
 import "@/styles/styles.scss";
 import type { Metadata } from "next";
 import { Header } from "@/components/shared/Header";
@@ -9,6 +10,12 @@ import { Main } from "@/components/shared/Main";
 const PottaOneFont = Potta_One({
 	weight: "400",
 	variable: "--font_potta_one",
+	subsets: ["latin"],
+});
+
+const MPlus1pFont = M_PLUS_1p({
+	weight: "400",
+	variable: "--font_m_plus_1p",
 	subsets: ["latin"],
 });
 
@@ -32,7 +39,7 @@ export default function RootLayout({
 					}}
 				/>
 			</head>
-			<body className={`${PottaOneFont.variable}`}>
+			<body className={`${PottaOneFont.variable} ${MPlus1pFont.variable}`}>
 				<ColorThemeProvider>
 					<Layout>
 						<Header />
