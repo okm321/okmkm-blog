@@ -50,7 +50,7 @@ export const NodesRenderer: FC<{ nodes: RootContent[] }> = ({ nodes }) => {
 				return <ImageNode key={`${node.type}-${index}`} node={node} />;
 			}
 			case "code": {
-				// @ts-expect-error Server Component
+				// @ts-ignore Server Component
 				return <CodeNode key={`${node.type}-${index}`} node={node} />;
 			}
 			case "delete": {

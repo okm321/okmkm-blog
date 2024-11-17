@@ -1,0 +1,9 @@
+@use 'shared-styles/global' as g;
+
+.articleHeader {
+  &__title {
+    font-weight: bold;
+    font-size: var(--font-size_xxl);
+    line-height: 1.2;
+  }
+}

@@ -31,6 +31,9 @@
       ],
       "shared-styles/*": [
         "../packages/shared-styles/*"
+      ],
+      "contents-manager/*": [
+        "../contents-manager/*"
       ]
     }
   },
