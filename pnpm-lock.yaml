@@ -51,9 +51,6 @@ importers:
       '@packages/utils':
         specifier: workspace:*
         version: link:../packages/utils
-      '@types/three':
-        specifier: ^0.170.0
-        version: 0.170.0
       contents-manager:
         specifier: workspace:*
         version: link:../contents-manager
@@ -85,6 +82,9 @@ importers:
       '@types/react-dom':
         specifier: ^18
         version: 18.3.1
+      '@types/three':
+        specifier: ^0.170.0
+        version: 0.170.0
       sass:
         specifier: ^1.80.6
         version: 1.80.6

@@ -12,7 +12,6 @@
 	"dependencies": {
 		"@packages/markdown-render": "workspace:*",
 		"@packages/utils": "workspace:*",
-		"@types/three": "^0.170.0",
 		"contents-manager": "workspace:*",
 		"gray-matter": "^4.0.3",
 		"next": "15.0.3",
@@ -25,6 +24,7 @@
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
+		"@types/three": "^0.170.0",
 		"sass": "^1.80.6",
 		"sass-embedded": "^1.80.6",
 		"typescript": "^5"
