@@ -1,0 +1,8 @@
+{
+  "name": "@packages/utils",
+  "private": true,
+  "main": "index.ts",
+  "dependencies": {
+    "date-fns": "^4.1.0"
+  }
+}

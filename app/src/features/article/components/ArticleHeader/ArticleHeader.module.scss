@@ -1,9 +1,24 @@
 @use 'shared-styles/global' as g;
 
 .articleHeader {
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto 4rem;
+
   &__title {
     font-weight: bold;
+    padding: 2.5em 0;
     font-size: var(--font-size_xxl);
-    line-height: 1.2;
+    line-height: 1.7;
+  }
+
+  &__date {
+    text-align: center;
+    line-height: 1.5;
+
+    &--text {
+      font-size: var(--font-size_s);
+      color: var(--color_article-published-date);
+    }
   }
 }

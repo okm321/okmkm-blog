@@ -1,4 +1,13 @@
 {
   "name": "contents-manager",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "arg": "^5.0.2",
+    "colors": "^1.4.0",
+    "fs-extra": "^11.2.0",
+    "nanoid": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4"
+  }
 }

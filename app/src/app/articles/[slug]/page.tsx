@@ -14,7 +14,7 @@ export default async function ArticlePage({ params }: Props) {
 
 	return (
 		<article>
-			<ArticleHeader title={metadata.title} publishedAt={metadata.date} />
+			<ArticleHeader title={metadata.title} publishedAt={metadata.publishedAt} updatedAt={metadata.updatedAt} />
 			<MarkdownRenderer>{content}</MarkdownRenderer>
 		</article>
 	);
