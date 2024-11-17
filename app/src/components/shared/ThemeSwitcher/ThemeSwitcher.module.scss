@@ -1,6 +1,6 @@
 .switch {
   position: absolute;
-  width: 50px;
+  width: 3.2rem;
   height: 100%;
   top: 0;
   left: 50%;
@@ -22,19 +22,21 @@
     z-index: 2;
   }
 
-  &:hover {
-    &::after {
-      content: '';
-      position: absolute;
-      width: 0px;
-      height: 0px;
-      border-radius: 50%;
-      background-color: var(--color_f-bg-theme-switcher);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow: var(--shadow_theme-switcher);
-      z-index: 1;
+  @media (hover: hover) {
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        border-radius: 50%;
+        background-color: var(--color_f-bg-theme-switcher);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: var(--shadow_theme-switcher);
+        z-index: 1;
+      }
     }
   }
 }

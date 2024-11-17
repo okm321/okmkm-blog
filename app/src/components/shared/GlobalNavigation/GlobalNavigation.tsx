@@ -12,17 +12,17 @@ const NavigationList: Navigation[] = [
 	{
 		title: "blog",
 		path: "/#",
-		icon: <BlogIcon fontSize="28px" />,
+		icon: <BlogIcon fontSize="1.7rem" />,
 	},
 	{
 		title: "zenn",
 		path: "/zenn",
-		icon: <ZennIcon fontSize="28px" />,
+		icon: <ZennIcon fontSize="1.7rem" />,
 	},
 	{
 		title: "Github",
 		path: "/#",
-		icon: <GithubIcon fontSize="28px" />,
+		icon: <GithubIcon fontSize="1.7rem" />,
 	},
 ];
 

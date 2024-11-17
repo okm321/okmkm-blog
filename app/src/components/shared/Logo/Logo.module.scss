@@ -3,11 +3,11 @@
 .logo {
   background-image: var(--image_logo);
   background-repeat: no-repeat;
-  font-size: g.$logo-font-size;
-  background-size: 60px;
+  font-size: var(--font-size_xxxl);
+  background-size: 3rem;
   background-position: left center;
-  height: 60px;
-  padding-left: 70px;
+  height: 3.75rem;
+  padding-left: 4rem;
   display: flex;
   align-items: center;
   font-family: var(--font_potta_one);
