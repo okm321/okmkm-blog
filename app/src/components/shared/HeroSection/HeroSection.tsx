@@ -20,18 +20,21 @@ export const HeroSection = () => {
 			0.1,
 			1000,
 		);
-		camera.position.set(0, 0, 8); // カメラの位置を調整
+		camera.position.set(0, 0, 8);
 
 		// **3. レンダラーを作成**
 		const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+		renderer.setPixelRatio(window.devicePixelRatio); // 解像度を向上
+		renderer.shadowMap.enabled = true; // シャドウ有効化
+		renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 高品質シャドウ
 
 		// **4. レンダラーのサイズを親要素に合わせる関数**
 		const resizeRenderer = () => {
 			if (mountRef.current) {
-				const { offsetWidth, offsetHeight } = mountRef.current; // 親要素のサイズを取得
+				const { offsetWidth, offsetHeight } = mountRef.current;
 				renderer.setSize(offsetWidth, offsetHeight);
-				camera.aspect = offsetWidth / offsetHeight; // カメラのアスペクト比を更新
-				camera.updateProjectionMatrix(); // プロジェクション行列を更新
+				camera.aspect = offsetWidth / offsetHeight;
+				camera.updateProjectionMatrix();
 			}
 		};
 
@@ -43,12 +46,12 @@ export const HeroSection = () => {
 		const ambientLight = new THREE.AmbientLight(0xffffff, 2);
 		scene.add(ambientLight);
 
-		// **6. 太陽光（DirectionalLight）を追加**
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
-		directionalLight.position.set(5, 5, 5);
+		// **6. 太陽光を追加**
+		const directionalLight = new THREE.DirectionalLight(0xffffff, 2.5);
+		directionalLight.position.set(10, 10, 10);
 		directionalLight.castShadow = true;
-		directionalLight.shadow.mapSize.width = 1024;
-		directionalLight.shadow.mapSize.height = 1024;
+		directionalLight.shadow.mapSize.width = 2048; // 高解像度シャドウ
+		directionalLight.shadow.mapSize.height = 2048;
 		directionalLight.shadow.camera.near = 0.1;
 		directionalLight.shadow.camera.far = 50;
 		scene.add(directionalLight);
@@ -67,12 +70,16 @@ export const HeroSection = () => {
 					model.scale.set(0.3, 0.3, 0.3);
 					model.position.copy(position);
 
-					// 影の設定
+					// 影とフィルタリング設定
 					// @ts-ignore
 					model.traverse((child) => {
 						if (child instanceof THREE.Mesh) {
 							child.castShadow = true;
 							child.receiveShadow = true;
+
+							if (child.material.map) {
+								child.material.map.anisotropy = 16; // 異方性フィルタリング
+							}
 						}
 					});
 
@@ -132,9 +139,9 @@ export const HeroSection = () => {
 			ref={mountRef}
 			style={{
 				width: "100%", // 親要素の幅を画面いっぱいに
-				height: "300px", // 高さを80vhに調整
-				margin: "0 auto", // 横方向を中央揃え
-				overflow: "hidden", // スクロールを防止
+				height: "300px", // 高さを調整
+				margin: "0 auto",
+				overflow: "hidden",
 				position: "relative",
 			}}
 		/>

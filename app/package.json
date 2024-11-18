@@ -10,6 +10,7 @@
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
+		"@google/model-viewer": "^4.0.0",
 		"@packages/markdown-render": "workspace:*",
 		"@packages/utils": "workspace:*",
 		"contents-manager": "workspace:*",

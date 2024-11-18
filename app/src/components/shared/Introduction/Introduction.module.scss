@@ -1,0 +1,65 @@
+.introduction {
+  display: flex;
+  max-width: 900px;
+  width: 90%;
+  margin: 1.5em auto;
+  height: 300px;
+  justify-content: space-between;
+}
+
+.modelViewer {
+  width: 60%;
+  position: relative;
+
+  &__item {
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    &.first {
+      top: 50%;
+      left: 50%;
+    }
+
+    &.second {
+      top: 20%;
+      left: 20%;
+    }
+
+    &.third {
+      top: 90%;
+      left: 30%;
+    }
+
+    &.fourth {
+      top: 30%;
+      left: 80%;
+    }
+
+    &.fifth {
+      top: 75%;
+      left: 90%;
+    }
+
+
+    model-viewer {
+      width: 7em;
+      height: 7em;
+    }
+  }
+}
+
+.profile {
+  width: 45%;
+  text-align: center;
+
+  &__image {
+    background-image: var(--image_introduction);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+  }
+}

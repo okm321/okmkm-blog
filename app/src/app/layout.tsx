@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/shared/Header";
 import { Layout } from "@/components/shared/Layout";
 import { Main } from "@/components/shared/Main";
+import Script from "next/script";
 
 const PottaOneFont = Potta_One({
 	weight: "400",
@@ -37,6 +38,10 @@ export default function RootLayout({
 					dangerouslySetInnerHTML={{
 						__html: `!function(){const e=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light",t=localStorage.getItem("okmkm-blog-color-theme"),o="system"===t||null==t?e:"light"===t?"light":"dark";window.document.documentElement.dataset.colorTheme=o}();`,
 					}}
+				/>
+				<Script
+					src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+					type="module"
 				/>
 			</head>
 			<body className={`${PottaOneFont.variable} ${MPlus1pFont.variable}`}>
