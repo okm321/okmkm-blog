@@ -1,6 +1,6 @@
 import { ColorThemeProvider } from "@/providers/ColorThemeProvider";
 import { Potta_One } from "next/font/google";
-import { M_PLUS_1p } from "next/font/google";
+import { M_PLUS_1p, Rubik_Doodle_Shadow } from "next/font/google";
 import "@/styles/styles.scss";
 import type { Metadata } from "next";
 import { Header } from "@/components/shared/Header";
@@ -8,9 +8,9 @@ import { Layout } from "@/components/shared/Layout";
 import { Main } from "@/components/shared/Main";
 import Script from "next/script";
 
-const PottaOneFont = Potta_One({
+const RubikDoodleShadowFont = Rubik_Doodle_Shadow({
 	weight: "400",
-	variable: "--font_potta_one",
+	variable: "--font_rubik_doodle_shadow",
 	subsets: ["latin"],
 });
 
@@ -42,9 +42,12 @@ export default function RootLayout({
 				<Script
 					src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
 					type="module"
+					crossOrigin="anonymous"
 				/>
 			</head>
-			<body className={`${PottaOneFont.variable} ${MPlus1pFont.variable}`}>
+			<body
+				className={`${RubikDoodleShadowFont.variable} ${MPlus1pFont.variable}`}
+			>
 				<ColorThemeProvider>
 					<Layout>
 						<Header />

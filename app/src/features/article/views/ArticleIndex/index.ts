@@ -1,0 +1,1 @@
+export { ArticleIndex } from "./ArticleIndex";

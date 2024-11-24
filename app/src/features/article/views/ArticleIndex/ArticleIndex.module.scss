@@ -1,0 +1,17 @@
+@use 'shared-styles/global' as g;
+
+.articleIndex {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 98%;
+}
+
+.articleHeader {
+  text-align: center;
+  margin: 3rem 0;
+  font-family: var(--font_rubik_doodle_shadow);
+
+  &__title {
+    font-size: var(--font-size_xxxl);
+  }
+}

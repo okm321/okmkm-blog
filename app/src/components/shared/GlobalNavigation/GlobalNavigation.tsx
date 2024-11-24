@@ -11,7 +11,7 @@ type Navigation = {
 const NavigationList: Navigation[] = [
 	{
 		title: "blog",
-		path: "/#",
+		path: "/articles",
 		icon: <BlogIcon fontSize="1.7rem" />,
 	},
 	{

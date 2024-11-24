@@ -1,5 +1,6 @@
 ---
-title: "長い記事のタイトルですよね。長い記事のタイトルですよね。長い記事のタイトルですよね。長い記事のタイトルですよね。長い記事のタイトルですよね。"
+title: "Nginx内でLaunchDarklyのフラグを使って、アプリケーションのメンテナンスモードを切り分ける"
+tags: ["react", "typescript"] # react, typescript, nextjs, go, vue, nuxtjs
 publishedAt: "2024-11-16"
 updatedAt: "2024-11-17"
 ---
