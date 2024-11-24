@@ -19,6 +19,7 @@ declare global {
 			"disable-zoom"?: boolean;
 			"auto-rotate-delay"?: number;
 			"interaction-prompt"?: string;
+			loading?: string;
 		}
 	}
 }
