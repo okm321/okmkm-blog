@@ -1,16 +1,11 @@
-import { Heading } from "@/components/shared/Heading";
 import type { FC } from "react";
 import { ArticleList } from "../../components/ArticleList";
-import classes from "./ArticleIndex.module.scss";
+import { SectionTitle } from "@/components/shared/SectionTitle/SectionTitle";
 
 export const ArticleIndex: FC = () => {
 	return (
-		<section className={classes.articleIndex}>
-			<header className={classes.articleHeader}>
-				<Heading level={2} className={classes.articleHeader__title}>
-					Article
-				</Heading>
-			</header>
+		<section>
+			<SectionTitle>Article</SectionTitle>
 			<ArticleList />
 		</section>
 	);

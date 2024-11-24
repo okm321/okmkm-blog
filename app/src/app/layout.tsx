@@ -52,7 +52,7 @@ export default function RootLayout({
 					<Layout>
 						<Header />
 						<Main>{children}</Main>
-						<footer>footer</footer>
+						{/* <footer>footer</footer> */}
 					</Layout>
 				</ColorThemeProvider>
 			</body>

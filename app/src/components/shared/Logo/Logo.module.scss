@@ -1,13 +1,14 @@
 @use 'shared-styles/global' as g;
 
 .logo {
-  background-image: var(--image_logo);
+  // background-image: var(--image_logo);
+  background-image: url('/rounded_face.svg');
   background-repeat: no-repeat;
   font-size: var(--font-size_xxxl);
-  background-size: 2.5rem;
+  background-size: 3.5rem;
   background-position: left center;
   height: 3.75rem;
-  padding-left: 3.2rem;
+  padding-left: 4rem;
   display: flex;
   align-items: center;
   font-family: var(--font_rubik_doodle_shadow);

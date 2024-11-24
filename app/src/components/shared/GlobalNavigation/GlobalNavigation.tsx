@@ -19,11 +19,11 @@ const NavigationList: Navigation[] = [
 		path: "/zenn",
 		icon: <ZennIcon fontSize="1.7rem" />,
 	},
-	{
-		title: "Github",
-		path: "/#",
-		icon: <GithubIcon fontSize="1.7rem" />,
-	},
+	// {
+	// 	title: "Github",
+	// 	path: "/#",
+	// 	icon: <GithubIcon fontSize="1.7rem" />,
+	// },
 ];
 
 export const GlobalNavigation = () => {

@@ -1,7 +1,8 @@
+import { ZennIndex } from "@/features/zenn/views/ZennIndex";
 import type { FC } from "react";
 
 const ZennArticlsePage: FC = () => {
-	return <div>hello, world</div>;
+	return <ZennIndex />;
 };
 
 export default ZennArticlsePage;
