@@ -14,9 +14,11 @@
     outline: 2px solid var(--color_outline);
   }
 
-  &:hover {
-    border: 2px solid var(--color_article-border-hover);
-    box-shadow: var(--shadow_global-nav);
+  @media (hover: hover) {
+    &:hover {
+      border: 2px solid var(--color_article-border-hover);
+      box-shadow: var(--shadow_global-nav);
+    }
   }
 
   &:not(:hover) {
