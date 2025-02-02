@@ -5,7 +5,7 @@ import { SectionTitle } from "@/components/shared/SectionTitle/SectionTitle";
 export const ArticleIndex: FC = () => {
 	return (
 		<section>
-			<SectionTitle>Article</SectionTitle>
+			<SectionTitle>Blog</SectionTitle>
 			<ArticleList />
 		</section>
 	);

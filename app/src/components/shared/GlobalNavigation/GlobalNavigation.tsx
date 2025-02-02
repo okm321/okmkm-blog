@@ -10,12 +10,12 @@ type Navigation = {
 
 const NavigationList: Navigation[] = [
 	{
-		title: "blog",
+		title: "ブログ一覧",
 		path: "/articles",
 		icon: <BlogIcon fontSize="1.7rem" />,
 	},
 	{
-		title: "zenn",
+		title: "zennの記事一覧",
 		path: "/zenn",
 		icon: <ZennIcon fontSize="1.7rem" />,
 	},
@@ -33,7 +33,7 @@ export const GlobalNavigation = () => {
 				{NavigationList.map((nav) => {
 					return (
 						<li key={nav.title}>
-							<NextLink href={nav.path}>
+							<NextLink href={nav.path} aria-label={nav.title}>
 								<div className={classes.navigationList__item}>
 									<span>{nav.icon}</span>
 								</div>

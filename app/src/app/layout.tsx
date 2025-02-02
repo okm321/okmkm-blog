@@ -27,6 +27,15 @@ export const metadata: Metadata = {
 		template: "%s | okmkm.log",
 	},
 	description: "webエンジニアのokmkmの技術ブログです。",
+	openGraph: {
+		images: [
+			{
+				url: "/opengraph-image",
+				width: 1200,
+				height: 630,
+			},
+		],
+	},
 };
 
 export default function RootLayout({
