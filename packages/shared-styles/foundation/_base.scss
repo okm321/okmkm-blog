@@ -47,6 +47,7 @@
   --shadow_global-nav: 0 2px 4px 0 #{g.$grey-200};
   --shadow_global-nav-reverse: 0 2px 4px 0 #{g.$grey-800};
   --shadow_theme-switcher: 0 0px 30px 20px #{g.$grey-900};
+  --shadow_top-face: 0 0 100px 0px #{rgba(g.$grey-900, 0.2)};
 }
 
 :root[data-color-theme='dark'] {
@@ -73,6 +74,7 @@
   --shadow_global-nav: 0 2px 4px 0 #{g.$grey-800};
   --shadow_global-nav-reverse: 0 2px 4px 0 #{g.$grey-200};
   --shadow_theme-switcher: 0 0px 40px 20px #{g.$grey-200};
+  --shadow_top-face: 0 0 100px 0px #{rgba(g.$grey-200, 0.2)};
 }
 
 html {
