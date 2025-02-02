@@ -20,6 +20,7 @@ declare global {
 			"auto-rotate-delay"?: number;
 			"interaction-prompt"?: string;
 			loading?: string;
+			children?: React.ReactNode;
 		}
 	}
 }
@@ -88,6 +89,11 @@ export const ModelViewer: FC<ModelViewerProps> = ({
 			disable-zoom={disableZoom}
 			auto-rotate-delay={autoRotateDelay || 0}
 			interaction-prompt={interactionPrompt}
-		/>
+		>
+			<div slot="progress-bar" style={{
+				display: "none",
+				visibility: "hidden"
+			}} />
+		</model-viewer>
 	);
 };

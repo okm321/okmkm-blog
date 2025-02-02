@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import { Logo } from "../Logo";
+import styles from "./Footer.module.scss";
 
 export const Footer: FC = () => {
-  return <footer><Logo /></footer>
+  return <footer className={styles.footer}>© 2025 okmkm. All rights reserved.</footer>
 }

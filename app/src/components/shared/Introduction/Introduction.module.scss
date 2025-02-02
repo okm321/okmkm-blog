@@ -41,6 +41,11 @@
   display: flex;
   justify-content: center;
   margin-top: 0.5rem;
+  min-height: 112px;
+
+  @media (max-width: 768px) {
+    min-height: 98px;
+  }
 
   &__item {
 
