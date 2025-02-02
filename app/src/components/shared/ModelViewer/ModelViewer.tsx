@@ -63,16 +63,16 @@ export const ModelViewer: FC<ModelViewerProps> = ({
 	shadowIntensity = "1",
 	scale = "1 1 1",
 	autoRotate = true,
-	rotationPerSecond = "20deg",
+	rotationPerSecond = "0deg",
 	disableZoom,
 	autoRotateDelay,
 	interactionPrompt,
 }) => {
-	const [randomOrbit, setRandomOrbit] = useState("");
+	const [randomOrbit, _] = useState("150deg 90deg 105%");
 
 	useEffect(() => {
 		// クライアントサイドでのみランダム値を生成
-		setRandomOrbit(`${Math.ceil(Math.random() * 360)}deg 120deg 105%`);
+		// setRandomOrbit(`${Math.ceil(Math.random() * 360)}deg 90deg 105%`);
 	}, []);
 	return (
 		<model-viewer

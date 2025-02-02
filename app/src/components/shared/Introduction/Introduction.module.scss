@@ -3,63 +3,50 @@
   max-width: 900px;
   width: 90%;
   margin: 1.5em auto;
-  height: 300px;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.profile {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 100%;
+
+  &__image {
+    background-image: url('/rounded_face.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    max-width: 150px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: var(--shadow_top-face);
+  }
+
+  >p {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    font-size: var(--font-size_xl);
+  }
 }
 
 .modelViewer {
-  width: 60%;
-  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
 
   &__item {
-    position: absolute;
-    transform: translate(-50%, -50%);
-
-    &.first {
-      top: 50%;
-      left: 50%;
-    }
-
-    &.second {
-      top: 20%;
-      left: 20%;
-    }
-
-    &.third {
-      top: 90%;
-      left: 30%;
-    }
-
-    &.fourth {
-      top: 30%;
-      left: 80%;
-    }
-
-    &.fifth {
-      top: 75%;
-      left: 90%;
-    }
-
 
     model-viewer {
       width: 7em;
       height: 7em;
     }
-  }
-}
-
-.profile {
-  width: 45%;
-  text-align: center;
-
-  &__image {
-    background-image: var(--image_introduction);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center top;
-    width: 100%;
-    max-width: 200px;
-    aspect-ratio: 1 / 1;
-    margin: 0 auto;
   }
 }
