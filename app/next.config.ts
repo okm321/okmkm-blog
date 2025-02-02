@@ -15,7 +15,8 @@ const nextConfig: NextConfig = {
 	sassOptions: {
 		implementation: "sass-embedded", // sassの代わりにsass-embeddedを使用
 	},
-	outputFileTracingRoot: path.join(__dirname, "../"),
+	outputFileTracingRoot: path.join(__dirname, ".."),
+	output: "standalone",
 };
 
 export default nextConfig;
