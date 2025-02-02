@@ -58,7 +58,7 @@ export default async function ArticleOpenGrapghImage({ params }: Props) {
 				style={{
 					display: "flex",
 					fontFamily: "ZenMaru",
-					fontSize: 64,
+					fontSize: 56,
 					fontWeight: "bold",
 					lineHeight: 1.2,
 					letterSpacing: "-0.01em",

@@ -15,6 +15,7 @@ import { TableNode } from "./TableNode";
 import { ThemanticBreakNode } from "./ThemanticBreakNode";
 import { HTMLNode } from "./HTMLNode";
 import { CodeNode } from "./CodeNode";
+import { LinkCard } from "./LinkCard";
 
 export const NodesRenderer: FC<{ nodes: RootContent[] }> = ({ nodes }) => {
 	return nodes.map((node, index) => {
@@ -64,6 +65,10 @@ export const NodesRenderer: FC<{ nodes: RootContent[] }> = ({ nodes }) => {
 			}
 			case "html": {
 				return <HTMLNode key={`${node.type}-${index}`} node={node} />;
+			}
+			case "link-card": {
+				// @ts-ignore Server Component
+				return <LinkCard key={`${node.type}-${index}`} node={node} />;
 			}
 			default: {
 				if (process.env.NODE_ENV === "development") {

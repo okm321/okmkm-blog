@@ -3,8 +3,9 @@ import type { RootContent, FootnoteDefinition, Root } from "mdast";
 import { NodesRenderer } from "./subComponents/NodesRenderer";
 import classes from "./MarkdownRenderer.module.scss";
 import remarkGfm from "remark-gfm";
+import { remarkLinkCard } from "../../lib/remark-link-card";
 
-const parseMarkdown = remark().use(remarkGfm);
+const parseMarkdown = remark().use(remarkGfm).use(remarkLinkCard);
 
 type Props = { children: string };
 

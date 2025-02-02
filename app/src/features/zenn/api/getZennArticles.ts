@@ -24,7 +24,11 @@ export const getZennArticles = async (): Promise<ZennArticle[]> => {
 	const parser = new RssParser();
 	const feedUrl = "https://zenn.dev/okmkm321/feed";
 
-	const xmlText = await fetch(feedUrl).then((res) => res.text());
+	const xmlText = await fetch(feedUrl, {
+		next: {
+			revalidate: 60 * 60 * 24,
+		},
+	}).then((res) => res.text());
 	const feed = await parser.parseString(xmlText);
 
 	return feed.items.map((item) => ({

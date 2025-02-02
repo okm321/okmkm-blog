@@ -22,8 +22,11 @@ const MPlus1pFont = M_PLUS_1p({
 });
 
 export const metadata: Metadata = {
-	title: "okmkm.log",
-	description: "okmkmの技術ブログです。",
+	title: {
+		default: "okmkm.log",
+		template: "%s | okmkm.log",
+	},
+	description: "webエンジニアのokmkmの技術ブログです。",
 };
 
 export default function RootLayout({

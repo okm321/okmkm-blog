@@ -15,4 +15,6 @@ export type MetaData = {
 	publishedAt: string;
 	/** 更新日時 */
 	updatedAt?: string;
+	/** 記事の概要 */
+	description: string;
 };
