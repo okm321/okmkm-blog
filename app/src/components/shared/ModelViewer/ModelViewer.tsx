@@ -90,10 +90,13 @@ export const ModelViewer: FC<ModelViewerProps> = ({
 			auto-rotate-delay={autoRotateDelay || 0}
 			interaction-prompt={interactionPrompt}
 		>
-			<div slot="progress-bar" style={{
-				display: "none",
-				visibility: "hidden"
-			}} />
+			<div
+				slot="progress-bar"
+				style={{
+					display: "none",
+					visibility: "hidden",
+				}}
+			/>
 		</model-viewer>
 	);
 };

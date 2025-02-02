@@ -18,7 +18,7 @@ export const ArticleCard: FC<Props> = ({ title, publishedAt, slug }) => {
 	return (
 		<article className={classes.articleCard}>
 			<Heading level={2} className="var(--font_rubik_doodle_shadow)">
-				<NextLink href={`/articles/${slug}`} className={classes.link}>
+				<NextLink href={`/blogs/${slug}`} className={classes.link}>
 					<Image
 						width={1200}
 						height={630}

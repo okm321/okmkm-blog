@@ -11,13 +11,13 @@ type Navigation = {
 const NavigationList: Navigation[] = [
 	{
 		title: "ブログ一覧",
-		path: "/articles",
-		icon: <BlogIcon fontSize="1.7rem" />,
+		path: "/blogs",
+		icon: <BlogIcon fontSize="1.7rem" aria-hidden="true" />,
 	},
 	{
 		title: "zennの記事一覧",
 		path: "/zenn",
-		icon: <ZennIcon fontSize="1.7rem" />,
+		icon: <ZennIcon fontSize="1.7rem" aria-hidden="true" />,
 	},
 	// {
 	// 	title: "Github",

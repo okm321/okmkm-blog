@@ -11,6 +11,12 @@ export const ThemeSwitcher = () => {
 		setColorTheme(newColorTheme);
 	};
 	return (
-		<button className={classes.switch} onClick={handleSwitch} type="button" />
+		// biome-ignore lint/a11y/noAriaHiddenOnFocusable: srユーザーには不要なため
+		<button
+			className={classes.switch}
+			onClick={handleSwitch}
+			type="button"
+			aria-hidden="true"
+		/>
 	);
 };

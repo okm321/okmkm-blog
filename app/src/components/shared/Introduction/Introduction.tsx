@@ -10,7 +10,7 @@ export const Introduction = () => {
 				<div className={classes.profile__image} />
 				<p>Hello, I'm a web developer!</p>
 				<p>Here's my tech stack!</p>
-				<div className={classes.modelViewer}>
+				<div className={classes.modelViewer} aria-hidden="true">
 					<div className={`${classes.modelViewer__item}`}>
 						<ModelViewer
 							src={"/react-pi.glb"}
