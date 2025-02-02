@@ -52,6 +52,11 @@
     model-viewer {
       width: 7em;
       height: 7em;
+
+      @media (max-width: 768px) {
+        font-size: var(--font-size_xs);
+      }
+
     }
   }
 }

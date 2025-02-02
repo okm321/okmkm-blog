@@ -8,6 +8,10 @@
   cursor: pointer;
   z-index: 2;
 
+  @media (max-width: 768px) {
+    width: 2.8rem;
+  }
+
   /* 背景画像を表示する疑似要素 */
   &::before {
     content: '';
