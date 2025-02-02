@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
 	},
 	outputFileTracingRoot: path.join(__dirname, ".."),
 	outputFileTracingIncludes: {
-		"/articles/[slug]/opengraph-image": [
+		"/blogs/[slug]/opengraph-image": [
 			path.join("..", "contents-manager", "articles", "**/*"),
 			path.join("..", "contents-manager", "images", "**/*"),
 		],

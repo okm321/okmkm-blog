@@ -22,7 +22,7 @@ export const ArticleCard: FC<Props> = ({ title, publishedAt, slug }) => {
 					<Image
 						width={1200}
 						height={630}
-						src={`/articles/${slug}/opengraph-image`}
+						src={`/blogs/${slug}/opengraph-image`}
 						alt=""
 						style={{
 							maxWidth: "100%",
