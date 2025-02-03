@@ -1,5 +1,4 @@
 import { ColorThemeProvider } from "@/providers/ColorThemeProvider";
-import { Potta_One } from "next/font/google";
 import { M_PLUS_1p, Rubik_Doodle_Shadow } from "next/font/google";
 import "@/styles/styles.scss";
 import type { Metadata } from "next";

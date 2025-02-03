@@ -1,5 +1,5 @@
 import type { RootContent } from "mdast";
-import type { FC } from "react";
+import { Suspense, type FC } from "react";
 import { HeadingNode } from "./HeadingNode";
 import { TextNode } from "./TextNode";
 import { ParagraphNode } from "./ParagraphNode";
@@ -16,6 +16,7 @@ import { ThemanticBreakNode } from "./ThemanticBreakNode";
 import { HTMLNode } from "./HTMLNode";
 import { CodeNode } from "./CodeNode";
 import { LinkCard } from "./LinkCard";
+import { LinkCardSkeleton } from "./LinkCard.Skeleton";
 
 export const NodesRenderer: FC<{ nodes: RootContent[] }> = ({ nodes }) => {
 	return nodes.map((node, index) => {
@@ -66,9 +67,17 @@ export const NodesRenderer: FC<{ nodes: RootContent[] }> = ({ nodes }) => {
 			case "html": {
 				return <HTMLNode key={`${node.type}-${index}`} node={node} />;
 			}
+			// case "link-card": {
+			// 	//  @ts-ignore Server Component
+			// 	return <LinkCard key={`${node.type}-${index}`} node={node} />;
+			// }
 			case "link-card": {
-				// @ts-ignore Server Component
-				return <LinkCard key={`${node.type}-${index}`} node={node} />;
+				return (
+					<Suspense fallback={<LinkCardSkeleton />}>
+						{/* @ts-ignore Server Component */}
+						<LinkCard key={`${node.type}-${index}`} node={node} />
+					</Suspense>
+				);
 			}
 			default: {
 				if (process.env.NODE_ENV === "development") {

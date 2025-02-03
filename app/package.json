@@ -13,6 +13,7 @@
 		"@google/model-viewer": "^4.0.0",
 		"@packages/markdown-render": "workspace:*",
 		"@packages/utils": "workspace:*",
+		"@packages/shared-components": "workspace:*",
 		"contents-manager": "workspace:*",
 		"gray-matter": "^4.0.3",
 		"hono": "^4.6.20",
