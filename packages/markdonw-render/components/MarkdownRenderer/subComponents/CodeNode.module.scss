@@ -5,12 +5,13 @@
   position: relative;
 
   figcaption {
-    font-size: var(--font-size_xs);
     background-color: var(--color_code-block-everforest-bg);
     color: var(--color_code-block-everforest-text);
     width: fit-content;
     padding: 0.5em 1em;
-    border-radius: 8px 8px 0 0
+    border-radius: 8px 8px 0 0;
+
+    font-size: var(--font-size_s);
   }
 
   pre {
@@ -28,7 +29,10 @@
       width: fit-content;
       min-width: 100%;
       line-height: 1.4;
-      font-size: var(--font-size_s);
+
+      @media (max-width: 768px) {
+        font-size: var(--font-size_s);
+      }
 
       :global(.diff) {
         margin: 0 -1em;
