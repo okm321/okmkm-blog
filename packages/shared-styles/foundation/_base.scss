@@ -43,6 +43,8 @@
   --color_article-link-card-description: #{g.$grey-600};
   --color_article-link-card-url: #{g.$grey-800};
   --color_article-link-card-hover: #{g.$grey-100};
+  --color_skeleton-bg: #{g.$grey-200};
+  --color_skeleton-wave: #{rgba(g.$grey-400, 0.5)};
 
   --image_logo: url("/myface_light.svg");
   --image_theme-switch: url("/theme-switch_light.svg");
@@ -74,6 +76,8 @@
   --color_article-link-card-description: #{g.$grey-500};
   --color_article-link-card-url: #{g.$grey-200};
   --color_article-link-card-hover: #{g.$grey-800};
+  --color_skeleton-bg: #{g.$grey-700};
+  --color_skeleton-wave: #{rgba(g.$grey-300, 0.5)};
 
   --image_logo: url("/myface_dark.svg");
   --image_theme-switch: url("/theme-switch_dark.svg");

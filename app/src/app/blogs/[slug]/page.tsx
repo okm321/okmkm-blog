@@ -1,7 +1,11 @@
+import { SkeletonRect } from "@/components/shared/Skeleton/subComponents/SkeletonRect";
+import { SkeletonText } from "@/components/shared/Skeleton/subComponents/SkeletonText";
 import { ArticleHeader } from "@/features/article/components/ArticleHeader";
+import { ArticleSkeleton } from "@/features/article/components/ArticleSkeleton";
 import { getMarkdownContent } from "@/features/article/utils/getMarkdownContent";
 import { MarkdownRenderer } from "@packages/markdown-render";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 type Props = {
 	params: Promise<{
@@ -41,7 +45,9 @@ export default async function ArticlePage({ params }: Props) {
 				publishedAt={metadata.publishedAt}
 				updatedAt={metadata.updatedAt}
 			/>
-			<MarkdownRenderer>{content}</MarkdownRenderer>
+			<Suspense fallback={<ArticleSkeleton />}>
+				<MarkdownRenderer>{content}</MarkdownRenderer>
+			</Suspense>
 		</article>
 	);
 }

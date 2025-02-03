@@ -1,0 +1,31 @@
+.skeleton__rect {
+  width: 100%;
+  min-height: 1rem;
+  background: var(--color_skeleton-bg);
+  overflow: hidden;
+  position: relative;
+  display: block;
+  border-radius: 0.25rem;
+
+  &:before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, var(--color_skeleton-wave), transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: skeleton-animation 2s linear infinite;
+  }
+}
+
+@keyframes skeleton-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
