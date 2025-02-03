@@ -56,10 +56,8 @@
 
       @media (max-width: 768px) {
         font-size: var(--font-size_xs);
-      }
-
-      @media (max-width: 400px) {
-        font-size: var(--font-size_xxs);
+        width: 6em;
+        height: 6em;
       }
     }
   }

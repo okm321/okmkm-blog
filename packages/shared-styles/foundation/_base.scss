@@ -96,6 +96,10 @@ html {
   color: var(--color_f-text-default);
   transition: background 0.3s;
   font-size: --var(font-size_base);
+
+  @media (max-width: 420px) {
+    font-size: var(--font-size_s);
+  }
 }
 
 body {
