@@ -4,7 +4,16 @@ import { Skeleton } from "@/components/shared/Skeleton/Skeleton";
 
 export const ArticleSkeleton: FC = () => {
 	return (
-		<div className={styles.articleSkeleton}>
+		<div
+			className={styles.articleSkeleton}
+			role="progressbar"
+			aria-valuenow={50}
+			aria-valuemin={0}
+			aria-valuemax={100}
+			aria-busy="true"
+			tabIndex={0}
+			aria-label="記事取得中"
+		>
 			<Skeleton variant="text" />
 			<Skeleton variant="text" width="80%" />
 			<Skeleton variant="text" width="40%" />
