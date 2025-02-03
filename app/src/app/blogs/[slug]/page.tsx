@@ -1,5 +1,3 @@
-import { SkeletonRect } from "@/components/shared/Skeleton/subComponents/SkeletonRect";
-import { SkeletonText } from "@/components/shared/Skeleton/subComponents/SkeletonText";
 import { ArticleHeader } from "@/features/article/components/ArticleHeader";
 import { ArticleSkeleton } from "@/features/article/components/ArticleSkeleton";
 import { getMarkdownContent } from "@/features/article/utils/getMarkdownContent";
