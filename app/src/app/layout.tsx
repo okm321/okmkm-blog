@@ -1,5 +1,5 @@
 import { ColorThemeProvider } from "@/providers/ColorThemeProvider";
-import { M_PLUS_1p, Rubik_Doodle_Shadow } from "next/font/google";
+import { Rubik_Doodle_Shadow, Noto_Sans_JP } from "next/font/google";
 import "@/styles/styles.scss";
 import type { Metadata } from "next";
 import { Header } from "@/components/shared/Header";
@@ -14,9 +14,9 @@ const RubikDoodleShadowFont = Rubik_Doodle_Shadow({
 	subsets: ["latin"],
 });
 
-const MPlus1pFont = M_PLUS_1p({
-	weight: "400",
-	variable: "--font_m_plus_1p",
+const NotoSansJPFont = Noto_Sans_JP({
+	weight: ["400", "800"],
+	variable: "--font_noto-sans-jp",
 	subsets: ["latin"],
 });
 
@@ -58,7 +58,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body
-				className={`${RubikDoodleShadowFont.variable} ${MPlus1pFont.variable}`}
+				className={`${RubikDoodleShadowFont.variable} ${NotoSansJPFont.variable}`}
 			>
 				<ColorThemeProvider>
 					<Layout>

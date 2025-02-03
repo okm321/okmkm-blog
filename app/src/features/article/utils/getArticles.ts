@@ -8,6 +8,7 @@ const ARTICLES_DIR = path.join(MONOREPO_ROOT, "contents-manager/articles");
 type Articles = Array<{
 	slug: string;
 	title: string;
+	tags: string[];
 	publishedAt: string;
 }>;
 
@@ -23,6 +24,7 @@ export const getArticles = (): Articles => {
 		return {
 			slug: filename.replace(/\.md$/, ""),
 			title: data.title,
+			tags: data.tags,
 			publishedAt: data.publishedAt,
 		};
 	});

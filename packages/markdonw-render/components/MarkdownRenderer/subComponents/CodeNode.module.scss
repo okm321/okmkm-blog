@@ -5,7 +5,7 @@
   position: relative;
 
   figcaption {
-    font-size: var(--font-size_s);
+    font-size: var(--font-size_xs);
     background-color: var(--color_code-block-everforest-bg);
     color: var(--color_code-block-everforest-text);
     width: fit-content;
@@ -14,9 +14,8 @@
   }
 
   pre {
-    font-size: 0.95rem;
     overflow-x: auto;
-    padding: 1.5em 0;
+    padding: 1em 0;
     border-radius: 8px;
 
     &[data-filename] {
@@ -24,21 +23,22 @@
     }
 
     code {
-      padding: 0 1.5em;
+      padding: 0 1.2em;
       display: block;
       width: fit-content;
       min-width: 100%;
       line-height: 1.4;
+      font-size: var(--font-size_s);
 
       :global(.diff) {
-        margin: 0 -1.5em;
-        padding: 0 1.5em;
-        width: calc(100% + 3em);
+        margin: 0 -1em;
+        padding: 0 1em;
+        width: calc(100% + 2em);
         display: inline-block;
 
         &:before {
           position: absolute;
-          left: 0.6em;
+          left: 0.4em;
         }
       }
 
@@ -62,11 +62,9 @@
       }
 
       :global(.highlighted) {
-
-
-        margin: 0 -1.5em;
-        padding: 0 1.5em;
-        width: calc(100% + 3em);
+        margin: 0 -1em;
+        padding: 0 1em;
+        width: calc(100% + 2em);
         display: inline-block;
         background-color: rgba(g.$grey-50, 0.5);
       }

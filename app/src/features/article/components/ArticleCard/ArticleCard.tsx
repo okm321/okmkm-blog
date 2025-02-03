@@ -12,9 +12,11 @@ type Props = {
 	publishedAt: string;
 	/** 記事のslug */
 	slug: string;
+	/** 記事のタグ */
+	tags: string[];
 };
 
-export const ArticleCard: FC<Props> = ({ title, publishedAt, slug }) => {
+export const ArticleCard: FC<Props> = ({ title, publishedAt, slug, tags }) => {
 	return (
 		<article className={classes.articleCard}>
 			<Heading level={2} className="var(--font_rubik_doodle_shadow)">

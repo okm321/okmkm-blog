@@ -57,6 +57,13 @@ const test = () => {
 }
 ```
 
+```nginx filename=nginx.conf
+local context = ld.makeContext({ # [!code --]
+  key = userKey,
+  ip = userIP
+})
+```
+
 https://kentcdodds.com/blog/write-tests
 
 https://okmkm-blog.vercel.app/blogs/test4
