@@ -12,11 +12,10 @@
 	"dependencies": {
 		"@google/model-viewer": "^4.0.0",
 		"@packages/markdown-render": "workspace:*",
-		"@packages/utils": "workspace:*",
 		"@packages/shared-components": "workspace:*",
+		"@packages/utils": "workspace:*",
 		"contents-manager": "workspace:*",
 		"gray-matter": "^4.0.3",
-		"hono": "^4.6.20",
 		"next": "15.0.3",
 		"react": "19.0.0-rc-66855b96-20241106",
 		"react-dom": "19.0.0-rc-66855b96-20241106",
@@ -25,6 +24,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
+		"@cloudflare/next-on-pages": "^1.13.7",
 		"@types/node": "^20.17.6",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
