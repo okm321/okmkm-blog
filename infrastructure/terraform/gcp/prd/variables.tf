@@ -8,9 +8,17 @@ locals {
   /****************************************
     Artifact Registry
   ****************************************/
-  ar_contents_manager = {
-    repository_id = "contents-manager"
+  ar_blog_app = {
+    repository_id = "blog-app"
   }
+
+  /****************************************
+    Cloud Run
+  ****************************************/
+  # cloud_run_contents_manager = {
+  #   name          = "contents-manager"
+  #   repository_id = "contents-manager"
+  # }
 
   /****************************************
     Secret Manager
