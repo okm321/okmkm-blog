@@ -3,12 +3,6 @@ variable "name" {
   type        = string
 }
 
-variable "deletion_protection" {
-  description = "Cloud Runのサービスが誤って削除されないようにする設定"
-  type        = bool
-  default     = false
-}
-
 variable "project_id" {
   description = "Google CloudのプロジェクトのID"
   type        = string
@@ -29,6 +23,11 @@ variable "memory" {
   description = "Cloud Runのサービスが使用するメモリのリソース制限"
   type        = string
   default     = "512Mi"
+}
+
+variable "service_account_email" {
+  description = "Cloud Runのサービスが使用するサービスアカウントのメールアドレス"
+  type        = string
 }
 
 variable "env" {

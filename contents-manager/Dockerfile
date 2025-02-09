@@ -4,7 +4,7 @@ FROM node:22
 WORKDIR /app
 
 # ルートのpackage.jsonとpnpm-workspace.yamlをコピー
-COPY --from=build-context package.json pnpm-workspace.yaml ./
+COPY --from=build-context package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 # `contents-manager`のソースコードをコピー
 COPY . ./contents-manager/

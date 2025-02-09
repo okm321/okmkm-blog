@@ -1,11 +1,13 @@
 resource "google_cloud_run_v2_service" "default" {
   name                = var.name
   location            = "asia-northeast1"
-  deletion_protection = var.deletion_protection
+  deletion_protection = false
 
   ingress = "INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER"
 
   template {
+    service_account = var.service_account_email
+
     scaling {
       min_instance_count = var.scaling.min_instance_count
       max_instance_count = var.scaling.max_instance_count
@@ -28,4 +30,8 @@ resource "google_cloud_run_v2_service" "default" {
   }
 
   depends_on = [var.artifact_registry_dependency]
+
+  lifecycle {
+    ignore_changes = [template[0].containers[0].image]
+  }
 }
