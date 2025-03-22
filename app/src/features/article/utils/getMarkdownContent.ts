@@ -1,30 +1,22 @@
-import path from "node:path";
-import fs from "node:fs";
-import matter from "gray-matter";
 import removeMarkdown from "remove-markdown";
-import type { MetaData } from "contents-manager/index";
+import type { ArticleDetailDto, MetaData } from "contents-manager/index";
+import { customFetch } from "@/api/customFetch";
 
-const MONOREPO_ROOT = path.resolve(process.cwd(), "../");
-const ARTICLES_DIR = path.join(MONOREPO_ROOT, "contents-manager/articles");
-
-export const getMarkdownContent = (
+export const getMarkdownContent = async (
 	slug: string,
-): { content: string; metadata: MetaData } => {
-	const filePath = path.join(ARTICLES_DIR, `${slug}.md`);
-	const fileContents = fs.readFileSync(filePath, "utf8");
+): Promise<{ content: string; metadata: MetaData }> => {
+	const article = await customFetch<ArticleDetailDto>(`/api/articles/${slug}`);
 
-	const { content, data } = matter(fileContents);
-
-	const plainText = removeMarkdown(content).replace(/\n/g, "").trim();
+	const plainText = removeMarkdown(article.body).replace(/\n/g, "").trim();
 	const description =
 		plainText.length > 100 ? `${plainText.slice(0, 100)}...` : plainText;
 
 	const metadata: MetaData = {
-		title: data.title,
-		publishedAt: data.publishedAt,
-		updatedAt: data.updatedAt,
+		title: article.title,
+		publishedAt: article.publishedAt,
+		updatedAt: article.updatedAt,
 		description,
 	};
 
-	return { content, metadata };
+	return { content: article.body, metadata };
 };

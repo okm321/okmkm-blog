@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "next dev --turbopack --hostname 0.0.0.0",
 		"build": "next build",
-		"start": "next start",
+		"start": "npx serve@latest out",
 		"lint": "next lint",
 		"check-types": "tsc --noEmit"
 	},
@@ -32,5 +32,8 @@
 		"sass": "^1.80.6",
 		"sass-embedded": "^1.80.6",
 		"typescript": "^5"
+	},
+	"volta": {
+		"extends": "../package.json"
 	}
 }

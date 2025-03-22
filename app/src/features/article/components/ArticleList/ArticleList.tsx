@@ -3,8 +3,8 @@ import { getArticles } from "../../utils/getArticles";
 import classes from "./ArticleList.module.scss";
 import { BlogCard } from "../BlogCard";
 
-export const ArticleList: FC = () => {
-	const articles = getArticles();
+export const ArticleList: FC = async () => {
+	const articles = await getArticles();
 
 	return (
 		<div className={classes.articleList}>
@@ -20,7 +20,7 @@ export const ArticleList: FC = () => {
 					key={article.slug}
 					title={article.title}
 					slug={article.slug}
-					tags={article.tags}
+					tags={article.tags ?? []}
 					publishedAt={article.publishedAt}
 				/>
 			))}

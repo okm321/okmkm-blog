@@ -1,4 +1,4 @@
-@use '../global' as g;
+@use "../global" as g;
 
 :root {
   --space_base: 4px;
@@ -23,7 +23,7 @@
   --color_outline: #{g.$blue-700};
 }
 
-:root[data-color-theme='light'] {
+:root[data-color-theme="light"] {
   --color_f-bg-default: #{g.$grey-50};
   --color_f-text-default: #{g.$grey-900};
   --color_f-bg-reverse-default: #{g.$grey-900};
@@ -57,7 +57,7 @@
   --shadow_top-face: 0 0 100px 0px #{rgba(g.$grey-900, 0.2)};
 }
 
-:root[data-color-theme='dark'] {
+:root[data-color-theme="dark"] {
   --color_f-bg-default: #{g.$grey-900};
   --color_f-text-default: #{g.$grey-50};
   --color_f-bg-reverse-default: #{g.$grey-50};

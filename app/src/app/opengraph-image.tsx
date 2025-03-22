@@ -1,4 +1,3 @@
-import { getMarkdownContent } from "@/features/article/utils/getMarkdownContent";
 import { ImageResponse } from "next/og";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -11,6 +10,9 @@ export const size = {
 export const contentType = "image/png";
 
 const assetsDirectory = `${process.cwd()}/assets`;
+
+// 静的生成のための設定を追加
+export const dynamic = "force-static";
 
 export default async function NormalOpenGrapghImage() {
 	const ogimageBgPromise = fs

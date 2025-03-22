@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 		default: "okmkm.log",
 		template: "%s | okmkm.log",
 	},
+	metadataBase: new URL("https://blog.okmkm.dev"),
 	description: "webエンジニアのokmkmの技術ブログです。",
 	openGraph: {
 		images: [

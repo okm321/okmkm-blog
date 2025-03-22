@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
 				pathname: "/zenn/image/upload/**",
 			},
 		],
+		unoptimized: true,
 	},
 	sassOptions: {
 		implementation: "sass-embedded", // sassの代わりにsass-embeddedを使用
@@ -22,7 +23,7 @@ const nextConfig: NextConfig = {
 			path.join("..", "contents-manager", "images", "**/*"),
 		],
 	},
-	output: "standalone",
+	output: "export",
 };
 
 export default nextConfig;

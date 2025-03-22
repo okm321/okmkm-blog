@@ -1,5 +1,6 @@
 import { ArticleHeader } from "@/features/article/components/ArticleHeader";
 import { ArticleSkeleton } from "@/features/article/components/ArticleSkeleton";
+import { getArticles } from "@/features/article/utils/getArticles";
 import { getMarkdownContent } from "@/features/article/utils/getMarkdownContent";
 import { MarkdownRenderer } from "@packages/markdown-render";
 import type { Metadata } from "next";
@@ -15,7 +16,7 @@ export const generateMetadata = async ({
 	params,
 }: Props): Promise<Metadata> => {
 	const { slug } = await params;
-	const article = getMarkdownContent(slug);
+	const article = await getMarkdownContent(slug);
 
 	return {
 		title: article.metadata.title,
@@ -32,9 +33,17 @@ export const generateMetadata = async ({
 	};
 };
 
+export const generateStaticParams = async () => {
+	const articles = await getArticles();
+
+	return articles.map((article) => ({
+		slug: article.slug,
+	}));
+};
+
 export default async function ArticlePage({ params }: Props) {
 	const { slug } = await params;
-	const { content, metadata } = getMarkdownContent(slug);
+	const { content, metadata } = await getMarkdownContent(slug);
 
 	return (
 		<article>
