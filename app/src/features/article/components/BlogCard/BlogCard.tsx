@@ -1,8 +1,8 @@
-import type { FC } from "react";
-import classes from "./BlogCard.module.scss";
-import NextLink from "next/link";
 import { Heading } from "@/components/shared/Heading";
 import { formatDate } from "@packages/utils";
+import NextLink from "next/link";
+import type { FC } from "react";
+import classes from "./BlogCard.module.scss";
 
 type Props = {
 	/** 記事タイトル */

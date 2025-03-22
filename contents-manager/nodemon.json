@@ -1,11 +1,6 @@
 {
-  "watch": [
-    "src",
-    "articles"
-  ],
-  "ext": "ts,md",
-  "ignore": [
-    "src/**/*.spec.ts"
-  ],
-  "exec": "tsx src/main.ts"
+	"watch": ["src", "articles"],
+	"ext": "ts,md",
+	"ignore": ["src/**/*.spec.ts"],
+	"exec": "tsx src/main.ts"
 }

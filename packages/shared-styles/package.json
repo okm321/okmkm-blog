@@ -1,12 +1,12 @@
 {
-  "name": "@packages/shared-styles",
-  "license": "UNLICENSED",
-  "private": true,
-  "exports": {
-    "./foundation": "./foundation/_index.scss",
-    "./global": "./global/_index.scss"
-  },
-  "volta": {
-    "extends": "../../package.json"
-  }
+	"name": "@packages/shared-styles",
+	"license": "UNLICENSED",
+	"private": true,
+	"exports": {
+		"./foundation": "./foundation/_index.scss",
+		"./global": "./global/_index.scss"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
 }

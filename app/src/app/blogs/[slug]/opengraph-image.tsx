@@ -1,8 +1,8 @@
+import fs from "node:fs/promises";
+import path from "node:path";
 import { getArticles } from "@/features/article/utils/getArticles";
 import { getMarkdownContent } from "@/features/article/utils/getMarkdownContent";
 import { ImageResponse } from "next/og";
-import fs from "node:fs/promises";
-import path from "node:path";
 
 type Props = {
 	params: Promise<{

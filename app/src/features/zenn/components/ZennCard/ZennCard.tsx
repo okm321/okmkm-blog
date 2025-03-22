@@ -1,8 +1,8 @@
 import { Heading } from "@/components/shared/Heading";
+import { formatDate } from "@packages/utils";
 import Image from "next/image";
 import type { FC } from "react";
 import classes from "./ZennCard.module.scss";
-import { formatDate } from "@packages/utils";
 
 type Props = {
 	/** 記事タイトル */

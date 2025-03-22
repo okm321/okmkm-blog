@@ -1,7 +1,6 @@
-import type { StoryObj, Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { MarkdownRenderer } from "./MarkdownRenderer";
-import { Suspense } from "react";
 
 const meta: Meta<typeof MarkdownRenderer> = {
 	title: "MarkdownRenderer",

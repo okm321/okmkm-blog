@@ -1,6 +1,6 @@
+import { formatDate } from "@packages/utils";
 import type { FC } from "react";
 import classes from "./ArticleHeader.module.scss";
-import { formatDate } from "@packages/utils";
 
 type Props = {
 	/** 記事のタイトル */

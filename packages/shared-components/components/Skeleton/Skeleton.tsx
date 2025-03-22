@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import { SkeletonText } from "./subComponents/SkeletonText";
 import { SkeletonRect } from "./subComponents/SkeletonRect";
+import { SkeletonText } from "./subComponents/SkeletonText";
 
 type Props = {
 	width?: number | string;

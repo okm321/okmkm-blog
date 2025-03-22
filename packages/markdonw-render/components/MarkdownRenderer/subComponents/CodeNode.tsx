@@ -1,10 +1,10 @@
-import type { RootContentMap } from "mdast";
-import { codeToHtml } from "shiki";
-import classes from "./CodeNode.module.scss";
 import {
 	transformerNotationDiff,
 	transformerNotationHighlight,
 } from "@shikijs/transformers";
+import type { RootContentMap } from "mdast";
+import { codeToHtml } from "shiki";
+import classes from "./CodeNode.module.scss";
 
 async function highlightWithShiki(
 	code: string,

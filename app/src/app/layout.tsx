@@ -1,12 +1,12 @@
 import { ColorThemeProvider } from "@/providers/ColorThemeProvider";
-import { Rubik_Doodle_Shadow, Noto_Sans_JP } from "next/font/google";
+import { Noto_Sans_JP, Rubik_Doodle_Shadow } from "next/font/google";
 import "@/styles/styles.scss";
-import type { Metadata } from "next";
+import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
 import { Layout } from "@/components/shared/Layout";
 import { Main } from "@/components/shared/Main";
+import type { Metadata } from "next";
 import Script from "next/script";
-import { Footer } from "@/components/shared/Footer";
 
 const RubikDoodleShadowFont = Rubik_Doodle_Shadow({
 	weight: "400",

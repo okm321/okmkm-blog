@@ -1,5 +1,5 @@
-import classes from "./Logo.module.scss";
 import NextLink from "next/link";
+import classes from "./Logo.module.scss";
 
 export const Logo = () => {
 	return (

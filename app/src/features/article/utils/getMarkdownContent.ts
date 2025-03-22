@@ -1,6 +1,6 @@
-import removeMarkdown from "remove-markdown";
-import type { ArticleDetailDto, MetaData } from "contents-manager/index";
 import { customFetch } from "@/api/customFetch";
+import type { ArticleDetailDto, MetaData } from "contents-manager/index";
+import removeMarkdown from "remove-markdown";
 
 export const getMarkdownContent = async (
 	slug: string,

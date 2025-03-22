@@ -1,25 +1,26 @@
 {
-  "name": "contents-manager",
-  "private": true,
-  "scripts": {
-    "dev": "nodemon",
-    "start": "tsx src/main.ts"
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.13.8",
-    "arg": "^5.0.2",
-    "colors": "^1.4.0",
-    "fs-extra": "^11.2.0",
-    "gray-matter": "^4.0.3",
-    "hono": "^4.6.20",
-    "nanoid": "^5.0.8",
-    "tsx": "^4.19.2",
-    "@types/fs-extra": "^11.0.4"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.9"
-  },
-  "volta": {
-    "extends": "../package.json"
-  }
+	"name": "contents-manager",
+	"private": true,
+	"scripts": {
+		"dev": "nodemon",
+		"start": "tsx src/main.ts",
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@hono/node-server": "^1.13.8",
+		"arg": "^5.0.2",
+		"colors": "^1.4.0",
+		"fs-extra": "^11.2.0",
+		"gray-matter": "^4.0.3",
+		"hono": "^4.6.20",
+		"nanoid": "^5.0.8",
+		"tsx": "^4.19.2",
+		"@types/fs-extra": "^11.0.4"
+	},
+	"devDependencies": {
+		"nodemon": "^3.1.9"
+	},
+	"volta": {
+		"extends": "../package.json"
+	}
 }

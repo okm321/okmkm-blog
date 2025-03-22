@@ -1,28 +1,28 @@
 {
-  "name": "@packages/markdown-render",
-  "license": "UNLICENSED",
-  "main": "index.ts",
-  "private": true,
-  "volta": {
-    "extends": "../../package.json"
-  },
-  "dependencies": {
-    "@packages/shared-components": "workspace:*",
-    "@packages/shared-styles": "workspace:*",
-    "open-graph-scraper": "^6.9.0",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "remark": "^15.0.1",
-    "remark-frontmatter": "^5.0.0",
-    "remark-gfm": "^4.0.0",
-    "shiki": "^1.29.2",
-    "unified": "^11.0.5",
-    "unist-util-visit": "^5.0.0"
-  },
-  "devDependencies": {
-    "@shikijs/transformers": "^1.29.2",
-    "@types/mdast": "4.0.3",
-    "@types/node": "^20.17.16",
-    "@types/react": "^18.3.18"
-  }
+	"name": "@packages/markdown-render",
+	"license": "UNLICENSED",
+	"main": "index.ts",
+	"private": true,
+	"volta": {
+		"extends": "../../package.json"
+	},
+	"dependencies": {
+		"@packages/shared-components": "workspace:*",
+		"@packages/shared-styles": "workspace:*",
+		"open-graph-scraper": "^6.9.0",
+		"react": "19.0.0-rc-66855b96-20241106",
+		"react-dom": "19.0.0-rc-66855b96-20241106",
+		"remark": "^15.0.1",
+		"remark-frontmatter": "^5.0.0",
+		"remark-gfm": "^4.0.0",
+		"shiki": "^1.29.2",
+		"unified": "^11.0.5",
+		"unist-util-visit": "^5.0.0"
+	},
+	"devDependencies": {
+		"@shikijs/transformers": "^1.29.2",
+		"@types/mdast": "4.0.3",
+		"@types/node": "^20.17.16",
+		"@types/react": "^18.3.18"
+	}
 }

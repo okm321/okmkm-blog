@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type FC } from "react";
+import { type FC, useEffect, useState } from "react";
 
 declare global {
 	namespace JSX {

@@ -1,7 +1,7 @@
 import type { RootContentMap } from "mdast";
 import { fetchSiteMetadata } from "../../../lib/fetchSiteMetadata";
-import styles from "./LinkCard.module.scss";
 import { getFaviconURL } from "../../../lib/getFavionURL";
+import styles from "./LinkCard.module.scss";
 
 export async function LinkCard({
 	node,

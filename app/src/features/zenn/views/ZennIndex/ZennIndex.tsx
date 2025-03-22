@@ -1,5 +1,5 @@
-import type { FC } from "react";
 import { SectionTitle } from "@/components/shared/SectionTitle/SectionTitle";
+import type { FC } from "react";
 import { ZennList } from "../../components/ZennList";
 import styles from "./ZennIndex.module.scss";
 

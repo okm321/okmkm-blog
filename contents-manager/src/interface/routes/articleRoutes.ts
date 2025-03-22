@@ -1,9 +1,9 @@
 import { Hono } from "hono";
-import { getArticlesHandler } from "../handlers/getArticlesHandler";
-import { FileArticleRepository } from "../../infrastructure/file/FileArticleRepository";
-import { GetArticlesUseCase } from "../../app/usecase/GetArticlesUseCase";
 import { GetArticleUseCase } from "../../app/usecase/GetArticleUseCase";
+import { GetArticlesUseCase } from "../../app/usecase/GetArticlesUseCase";
+import { FileArticleRepository } from "../../infrastructure/file/FileArticleRepository";
 import { getArticleHandler } from "../handlers/getArticleHandler";
+import { getArticlesHandler } from "../handlers/getArticlesHandler";
 
 const app = new Hono();
 const repository = new FileArticleRepository();

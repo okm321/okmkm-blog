@@ -1,9 +1,9 @@
-import type { FC } from "react";
-import NextLink from "next/link";
-import Image from "next/image";
-import classes from "./ArticleCard.module.scss";
-import { formatDate } from "@packages/utils";
 import { Heading } from "@/components/shared/Heading";
+import { formatDate } from "@packages/utils";
+import Image from "next/image";
+import NextLink from "next/link";
+import type { FC } from "react";
+import classes from "./ArticleCard.module.scss";
 
 type Props = {
 	/** 記事タイトル */

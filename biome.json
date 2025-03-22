@@ -11,16 +11,22 @@
 	},
 	"formatter": {
 		"enabled": true,
-		"indentStyle": "tab"
+		"indentStyle": "tab",
+		"ignore": [".next", "node_modules", ".terraform", "out"]
 	},
 	"organizeImports": {
-		"enabled": true
+		"enabled": true,
+		"ignore": [".next", "node_modules", ".terraform", "out"]
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
-		}
+			"recommended": true,
+			"correctness": {
+				"noUnusedImports": "error"
+			}
+		},
+		"ignore": [".next", "node_modules", ".terraform", "out"]
 	},
 	"javascript": {
 		"formatter": {

@@ -1,5 +1,4 @@
 import type { FC, HTMLAttributes, PropsWithChildren } from "react";
-import classes from "./Heading.module.scss";
 
 type Props = PropsWithChildren<{
 	/** 見出しレベル */

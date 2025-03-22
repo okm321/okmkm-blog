@@ -1,10 +1,8 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "paths": {
-      "shared-styles/*": [
-        "../packages/shared-styles/*"
-      ]
-    }
-  }
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"paths": {
+			"shared-styles/*": ["../packages/shared-styles/*"]
+		}
+	}
 }

@@ -1,6 +1,6 @@
+import { Skeleton } from "@packages/shared-components";
 import type { FC } from "react";
 import styles from "./ArticleSkeleton.module.scss";
-import { Skeleton } from "@packages/shared-components";
 
 export const ArticleSkeleton: FC = () => {
 	return (

@@ -1,5 +1,5 @@
-import type { ReactNode, SVGProps } from "react";
 import NextLink from "next/link";
+import type { ReactNode, SVGProps } from "react";
 import classes from "./GlobalNavigation.module.scss";
 
 type Navigation = {

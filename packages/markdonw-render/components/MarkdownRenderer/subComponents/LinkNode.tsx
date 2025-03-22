@@ -1,7 +1,7 @@
 import type { RootContentMap } from "mdast";
 import type { FC } from "react";
-import { NodesRenderer } from "./NodesRenderer";
 import classes from "./LinkNode.module.scss";
+import { NodesRenderer } from "./NodesRenderer";
 
 export const LinkNode: FC<{ node: RootContentMap["link"] }> = ({ node }) => {
 	return (

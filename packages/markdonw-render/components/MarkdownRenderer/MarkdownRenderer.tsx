@@ -1,9 +1,9 @@
+import type { FootnoteDefinition, Root, RootContent } from "mdast";
 import { remark } from "remark";
-import type { RootContent, FootnoteDefinition, Root } from "mdast";
-import { NodesRenderer } from "./subComponents/NodesRenderer";
-import classes from "./MarkdownRenderer.module.scss";
 import remarkGfm from "remark-gfm";
 import { remarkLinkCard } from "../../lib/remark-link-card";
+import classes from "./MarkdownRenderer.module.scss";
+import { NodesRenderer } from "./subComponents/NodesRenderer";
 
 const parseMarkdown = remark().use(remarkGfm).use(remarkLinkCard);
 

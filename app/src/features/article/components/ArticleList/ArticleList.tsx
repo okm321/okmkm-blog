@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { getArticles } from "../../utils/getArticles";
-import classes from "./ArticleList.module.scss";
 import { BlogCard } from "../BlogCard";
+import classes from "./ArticleList.module.scss";
 
 export const ArticleList: FC = async () => {
 	const articles = await getArticles();
