@@ -124,6 +124,9 @@ importers:
       '@hono/node-server':
         specifier: ^1.13.8
         version: 1.13.8(hono@4.6.20)
+      '@types/fs-extra':
+        specifier: ^11.0.4
+        version: 11.0.4
       arg:
         specifier: ^5.0.2
         version: 5.0.2
@@ -142,16 +145,13 @@ importers:
       nanoid:
         specifier: ^5.0.8
         version: 5.0.9
-    devDependencies:
-      '@types/fs-extra':
-        specifier: ^11.0.4
-        version: 11.0.4
-      nodemon:
-        specifier: ^3.1.9
-        version: 3.1.9
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
+    devDependencies:
+      nodemon:
+        specifier: ^3.1.9
+        version: 3.1.9
 
   packages/markdonw-render:
     dependencies:
