@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - "app/**"
-      - ".github/blog_cicd.yml"
+      - ".github/workflows/blog_cicd.yml"
   pull_request:
     branches:
       - main
@@ -114,6 +114,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy out --project-name=${{ env.PROJECT_NAME }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cleanup - Stop API
         if: always()
