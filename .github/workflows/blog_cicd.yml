@@ -1,0 +1,111 @@
+name: Blog App CI/CD Pipeline
+
+# ワークフローのトリガー設定
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "app/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "app/**"
+  workflow_dispatch: # 手動実行用のトリガー
+
+# 同時実行制御の設定
+concurrency:
+  # グループ名の定義 - PRの場合はPR番号、mainへのpushの場合は'production'とする
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || 'production' }}
+  # 新しいワークフローの実行時に進行中のワークフローをキャンセル
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Lint and Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Biome check
+        run: pnpm format:check
+
+      - name: Type check app
+        run: pnpm app typecheck
+
+  cd:
+    name: Build and Deploy
+    needs: ci
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkou
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run contents-manager api
+        run: |
+          pnpm api start & echo $! > api_pid.txt
+
+          echo "Waiting for API to start..."
+
+          # ポートが実際にリスニングされているか確認（最大30秒待機）
+          attempt=0
+          max_attempts=30
+          while [ $attempt -lt $max_attempts ]; do
+            attempt=$((attempt+1))
+
+            # ポート3001が開いているかチェック
+            if lsof -i:3001 -t >/dev/null 2>&1 || netstat -tuln | grep -q ":3001 "; then
+              echo "Port 3001 is open and listening - API is ready!"
+              break
+            fi
+
+            # 最大試行回数に達した場合はエラー
+            if [ $attempt -ge $max_attempts ]; then
+              echo "Error: API failed to start after $max_attempts attempts"
+              exit 1
+            fi
+
+            echo "Waiting for API to listen on port 3001... (attempt $attempt/$max_attempts)"
+            sleep 1
+          done
+
+          echo "API is now running and ready for requests."
+
+      - name: Build app
+        run: pnpm app build
+
+      - name: Cleanup - Stop API
+        if: always()
+        run: |
+          if [ -f api_pid.txt ]; then
+            echo "Stopping API server..."
+            kill $(cat api_pid.txt)
+          fi
