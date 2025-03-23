@@ -1,5 +1,5 @@
 ---
-title: "更新:Nginx内でLaunchDarklyのフラグを使って、アプリケーションのメンテナンスモードを切り分ける"
+title: "Nginx内でLaunchDarklyのフラグを使って、アプリケーションのメンテナンスモードを切り分ける"
 tags: ["react", "typescript"] # react, typescript, nextjs, go, vue, nuxtjs
 publishedAt: "2024-11-16"
 updatedAt: "2024-11-17"
