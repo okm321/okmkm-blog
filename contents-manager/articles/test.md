@@ -73,7 +73,3 @@ local context = ld.makeContext({ # [!code --]
 ```
 
 https://kentcdodds.com/blog/write-tests
-
-https://okmkm-blog.vercel.app/blogs/test4
-
-https://okmkm-blog.vercel.app/zenn
