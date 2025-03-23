@@ -57,24 +57,12 @@ jobs:
       - name: Build app
         run: pnpm app build
 
-      - name: Deploy app
-        id: deploy
-        uses: cloudflare/wrangler-action@v3
+      - name: Deploy and Comment
+        uses: ./.github/actions/deploy_blog_app_to_cloudflare_pages
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy out --project-name=${{ env.PROJECT_NAME }} --branch=${{ github.head_ref }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          packageManager: pnpm
-          workingDirectory: app # ルートではなくアプリディレクトリを指定
-          wranglerVersion: 4.3.0
-
-      - name: Comment Preview URL on PR
-        uses: moojing/cf-preview-bot@v1
-        if: github.event_name == 'pull_request'
-        with:
-          deployment_url: ${{ steps.deploy.outputs.deployment-url }}
-          branch_preview_url: ${{ steps.deploy.outputs.pages-deployment-alias-url }}
+          api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          project_name: ${{ env.PROJECT_NAME }}
 
       - name: Stop contents-manager API Server
         uses: ./.github/actions/stop_contents_manager_api
