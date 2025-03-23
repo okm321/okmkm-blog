@@ -18,6 +18,9 @@ importers:
         specifier: ^1.29.2
         version: 1.29.2
     devDependencies:
+      '@biomejs/biome':
+        specifier: 1.9.4
+        version: 1.9.4
       '@chromatic-com/storybook':
         specifier: ^3.2.4
         version: 3.2.4(react@19.0.0-rc-66855b96-20241106)(storybook@8.5.3)
