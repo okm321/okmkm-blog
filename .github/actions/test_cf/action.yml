@@ -1,0 +1,88 @@
+name: "Comment Cloudflare Preview URL on PR"
+description: "Posts a comment on a PR with Cloudflare Pages deployment details"
+
+inputs:
+  deployment_url:
+    description: "Deployment URL"
+    required: true
+  branch_preview_url:
+    description: "Branch Preview URL"
+    required: true
+  allowed_branch_patterns:
+    description: "Comma-separated list of branch prefixes that should trigger the action (use 'all' for no filtering)"
+    required: false
+    default: "all"
+
+outputs:
+  comment_message:
+    description: "Generated comment message"
+    value: ${{ steps.generate_comment.outputs.comment }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check if event is a pull request
+      id: check_event
+      shell: bash
+      run: |
+        if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+          echo "is_pr=true" >> $GITHUB_OUTPUT
+        else
+          echo "is_pr=false" >> $GITHUB_OUTPUT
+          echo "Not a pull request event. Skipping action."
+        fi
+
+    - name: Check if PR head branch matches allowed patterns
+      id: check_branch
+      if: steps.check_event.outputs.is_pr == 'true'
+      shell: bash
+      run: |
+        HEAD_BRANCH="${{ github.event.pull_request.head.ref }}"
+        ALLOWED_PATTERNS="${{ inputs.allowed_branch_patterns }}"
+
+        if [[ "$ALLOWED_PATTERNS" == "all" ]]; then
+          echo "No branch filtering applied. Proceeding..."
+          exit 0
+        fi
+
+        MATCH=false
+        IFS=',' read -ra PATTERNS <<< "$ALLOWED_PATTERNS"
+        for pattern in "${PATTERNS[@]}"; do
+          if [[ "$HEAD_BRANCH" == "$pattern"* ]]; then
+            MATCH=true
+            break
+          fi
+        done
+
+        echo "Branch: $HEAD_BRANCH"
+        echo "Allowed Patterns: $ALLOWED_PATTERNS"
+        echo "Match: $MATCH"
+
+        if [[ "$MATCH" == "false" ]]; then
+          echo "Branch does not match allowed patterns. Skipping action."
+          exit 0
+        fi
+
+    - name: Generate comment message
+      id: generate_comment
+      if: steps.check_event.outputs.is_pr == 'true' && (steps.check_branch.outputs.branch_allowed == 'true' || steps.check_branch.outputs.branch_allowed == '')
+      shell: bash
+      run: |
+        {
+          echo "comment<<EOF"
+          echo "## 🚀 Deploying ${{ github.head_ref || github.ref_name }} with ⚡ Cloudflare Pages"
+          echo ""
+          echo "| **Latest commit:** | \`${{ github.event.pull_request.head.sha }}\` |"
+          echo "|--------------------|----------------------|"
+          echo "| **Status:**        | ✅ Deploy successful |"
+          echo "| **Preview URL:**   | [${{ inputs.deployment_url }}](${{ inputs.deployment_url }}) |"
+          echo "| **Branch Preview URL:** | [${{ inputs.branch_preview_url }}](${{ inputs.branch_preview_url }}) |"
+          echo "EOF"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: Comment on PR
+      if: steps.check_event.outputs.is_pr == 'true' && (steps.check_branch.outputs.branch_allowed == 'true' || steps.check_branch.outputs.branch_allowed == '')
+      uses: thollander/actions-comment-pull-request@v2
+      with:
+        message: ${{ steps.generate_comment.outputs.comment }}
+        comment_tag: preview-url-comment
