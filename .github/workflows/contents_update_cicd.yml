@@ -23,6 +23,10 @@ jobs:
   build-and-deploy:
     name: Build and Deploy Blog
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
     environment: Production
     env: # 環境変数の設定
       API_BASE_URL: ${{ vars.API_BASE_URL }}
