@@ -117,7 +117,7 @@ jobs:
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           packageManager: pnpm
           workingDirectory: app # ルートではなくアプリディレクトリを指定
-          wranglerVersion: "3.90.0"
+          wranglerVersion: 4.3.0
 
       - name: Cleanup - Stop API
         if: always()
