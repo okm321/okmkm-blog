@@ -10,14 +10,14 @@ type Navigation = {
 
 const NavigationList: Navigation[] = [
 	{
-		title: "ブログ一覧",
-		path: "/blogs",
-		icon: <BlogIcon fontSize="1.7rem" aria-hidden="true" />,
+		title: "記事一覧",
+		path: "/articles",
+		icon: <ArticleIcon fontSize="1.8rem" aria-hidden="true" />,
 	},
 	{
 		title: "zennの記事一覧",
 		path: "/zenn",
-		icon: <ZennIcon fontSize="1.7rem" aria-hidden="true" />,
+		icon: <ZennIcon fontSize="1.5rem" aria-hidden="true" />,
 	},
 	// {
 	// 	title: "Github",
@@ -46,32 +46,20 @@ export const GlobalNavigation = () => {
 	);
 };
 
-export function BlogIcon(props: SVGProps<SVGSVGElement>) {
+export function ArticleIcon(props: SVGProps<SVGSVGElement>) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="1em"
 			height="1em"
-			viewBox="0 0 20 20"
+			viewBox="0 0 24 24"
 			{...props}
 		>
-			<title>Book</title>
-			<g fill="currentColor">
-				<path
-					d="m11 5.79l7.314-1.27q.12-.02.242-.02c.801 0 1.444.664 1.444 1.475v9.786c0 .72-.511 1.34-1.213 1.456l-7.705 1.276a.5.5 0 0 1-.18-.002l-7.647-1.267A1.5 1.5 0 0 1 2 15.744V6.011a1.5 1.5 0 0 1 1.756-1.478z"
-					opacity=".2"
-				/>
-				<path
-					fillRule="evenodd"
-					d="M10.08 4.304L2.244 3.019A1.5 1.5 0 0 0 .5 4.5v9.738a1.5 1.5 0 0 0 1.268 1.482l8.155 1.275a.5.5 0 0 0 .577-.494V4.797a.5.5 0 0 0-.42-.493m-8-.298L9.5 5.222v10.694L1.923 14.73a.5.5 0 0 1-.423-.493V4.5a.5.5 0 0 1 .58-.494"
-					clipRule="evenodd"
-				/>
-				<path
-					fillRule="evenodd"
-					d="M18 3a1.5 1.5 0 0 0-.243.02L9.92 4.303a.5.5 0 0 0-.419.493V16.5a.5.5 0 0 0 .577.494l8.155-1.275a1.5 1.5 0 0 0 1.268-1.482V4.5A1.5 1.5 0 0 0 18 3m.077 11.73L10.5 15.917V5.222l7.42-1.216a.5.5 0 0 1 .58.494v9.737a.5.5 0 0 1-.423.493"
-					clipRule="evenodd"
-				/>
-			</g>
+			<title>Article</title>
+			<path
+				fill="currentColor"
+				d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm2-4h7v-2H7zm0-4h10v-2H7zm0-4h10V7H7z"
+			/>
 		</svg>
 	);
 }
