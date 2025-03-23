@@ -13,7 +13,7 @@ on:
       - main
     paths:
       - "app/**"
-      - ".github/blog_cicd.yml"
+      - ".github/workflows/blog_cicd.yml"
   workflow_dispatch: # 手動実行用のトリガー
 
 # 同時実行制御の設定
