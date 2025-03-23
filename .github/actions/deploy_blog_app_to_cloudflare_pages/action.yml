@@ -1,0 +1,46 @@
+name: Deploy Blog App to Cloudflare Pages
+description: Deploy the blog to Cloudflare Pages and comment on PR with deployment URLs
+
+inputs:
+  api_token:
+    description: "Cloudflare API token"
+    required: true
+  account_id:
+    description: "Cloudflare account ID"
+    required: true
+  project_name:
+    description: "Name of the project to deploy"
+    required: true
+  github_token:
+    description: "GitHub token"
+    required: true
+
+outputs:
+  deployment_url:
+    description: "Deployment URL"
+    value: ${{ steps.deploy.outputs.deployment-url }}
+  preview_url:
+    description: "Branch preview URL"
+    value: ${{ steps.deploy.outputs.pages-deployment-alias-url }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Deploy to Cloudflare Pages
+      id: deploy
+      uses: cloudflare/wrangler-action@v3
+      with:
+        apiToken: ${{ inputs.api_token }}
+        accountId: ${{ inputs.account_id }}
+        command: pages deploy out --project-name=${{ inputs.project_name }} --branch=${{ github.head_ref }}
+        gitHubToken: ${{ inputs.github_token }}
+        packageManager: pnpm
+        workingDirectory: app
+        wranglerVersion: 4.3.0
+
+    - name: Comment Preview URL on PR
+      uses: moojing/cf-preview-bot@v1
+      if: github.event_name == 'pull_request'
+      with:
+        deployment_url: ${{ steps.deploy.outputs.deployment-url }}
+        branch_preview_url: ${{ steps.deploy.outputs.pages-deployment-alias-url }}
