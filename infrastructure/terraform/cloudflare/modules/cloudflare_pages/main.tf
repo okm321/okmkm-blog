@@ -14,7 +14,7 @@ resource "cloudflare_dns_record" "blog_page_dns" {
   zone_id = var.zone_id
   name    = var.custom_domain
   type    = "cname"
-  content = "${cloudflare_pages_domain.blog_page_domain.name}.pages.dev"
-  proxied = false
+  content = "${cloudflare_pages_project.blog_page.name}.pages.dev"
+  proxied = true
   ttl     = 1
 }
