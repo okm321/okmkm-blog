@@ -23,7 +23,7 @@ export const generateMetadata = async ({
 		description: article.metadata.description,
 		openGraph: {
 			type: "article",
-			url: `/blogs/${slug}`,
+			url: `/articles/${slug}`,
 			title: article.metadata.title,
 			description: article.metadata.description,
 			publishedTime: article.metadata.publishedAt,

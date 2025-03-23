@@ -5,7 +5,7 @@ import { ArticleList } from "../../components/ArticleList";
 export const ArticleIndex: FC = () => {
 	return (
 		<section>
-			<SectionTitle>Blog</SectionTitle>
+			<SectionTitle>Article</SectionTitle>
 			<ArticleList />
 		</section>
 	);

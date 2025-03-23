@@ -2,8 +2,8 @@ import { ArticleIndex } from "@/features/article/views/ArticleIndex";
 
 export const generateMetadata = () => {
 	return {
-		title: "ブログ一覧",
-		description: "ブログ記事の一覧です。",
+		title: "記事一覧",
+		description: "記事の一覧です。",
 	};
 };
 
