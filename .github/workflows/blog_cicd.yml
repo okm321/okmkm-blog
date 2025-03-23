@@ -115,6 +115,9 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy out --project-name=${{ env.PROJECT_NAME }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          packageManager: pnpm
+          workingDirectory: app # ルートではなくアプリディレクトリを指定
+          wranglerVersion: "3.90.0"
 
       - name: Cleanup - Stop API
         if: always()
