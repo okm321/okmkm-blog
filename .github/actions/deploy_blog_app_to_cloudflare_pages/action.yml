@@ -11,6 +11,9 @@ inputs:
   project_name:
     description: "Name of the project to deploy"
     required: true
+  github_token:
+    description: "GitHub token"
+    required: true
 
 outputs:
   deployment_url:
@@ -30,7 +33,7 @@ runs:
         apiToken: ${{ inputs.api_token }}
         accountId: ${{ inputs.account_id }}
         command: pages deploy out --project-name=${{ inputs.project_name }} --branch=${{ github.head_ref }}
-        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        gitHubToken: ${{ inputs.github_token }}
         packageManager: pnpm
         workingDirectory: app
         wranglerVersion: 4.3.0

@@ -63,6 +63,7 @@ jobs:
           api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           project_name: ${{ env.PROJECT_NAME }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Stop contents-manager API Server
         uses: ./.github/actions/stop_contents_manager_api
