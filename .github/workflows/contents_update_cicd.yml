@@ -1,0 +1,65 @@
+name: Contents Update CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "contents-manager/articles/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "contents-manager/articles/**"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || 'production' }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy Blog
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # pnpmのセットアップ
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      # 依存関係のインストール
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Start contents-manager API Server
+        uses: ./.github/actions/start_contents_manager_api
+        id: start_api
+
+      - name: Build app
+        run: pnpm app build
+
+      - name: Deploy app
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy out --project-name=${{ env.PROJECT_NAME }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          packageManager: pnpm
+          workingDirectory: app # ルートではなくアプリディレクトリを指定
+          wranglerVersion: 4.3.0
+
+      - name: Stop contents-manager API Server
+        uses: ./.github/actions/stop_contents_manager_api
+        with:
+          api_pid: ${{ steps.start_api.outputs.api_pid }}

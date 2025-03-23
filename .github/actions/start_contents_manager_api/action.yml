@@ -1,0 +1,43 @@
+name: Start Contents Manager API
+description: Start the contents-manager API server
+
+outputs:
+  api_pid:
+    description: "PID of the API server"
+    value: ${{ steps.run-api.outputs.api_pid }}
+
+runs:
+  using: composite
+  steps:
+    - name: Run contents-manager api
+      shell: bash
+      id: run-api
+      run: |
+        pnpm api start & echo $! > api_pid.txt
+
+        echo "Waiting for API to start..."
+
+        # ポートが実際にリスニングされているか確認（最大30秒待機）
+        attempt=0
+        max_attempts=30
+        while [ $attempt -lt $max_attempts ]; do
+          attempt=$((attempt+1))
+
+          # ポート3001が開いているかチェック
+          if lsof -i:3001 -t >/dev/null 2>&1 || netstat -tuln | grep -q ":3001 "; then
+            echo "Port 3001 is open and listening - API is ready!"
+            break
+          fi
+
+          # 最大試行回数に達した場合はエラー
+          if [ $attempt -ge $max_attempts ]; then
+            echo "Error: API failed to start after $max_attempts attempts"
+            exit 1
+          fi
+
+          echo "Waiting for API to listen on port 3001... (attempt $attempt/$max_attempts)"
+          sleep 1
+        done
+
+        echo "API is now running and ready for requests."
+        echo "api_pid=$(cat api_pid.txt)" >> $GITHUB_OUTPUT

@@ -1,0 +1,23 @@
+name: Stop Contents Manager API
+description: Stop the contents-manager API after the CI/CD pipeline has completed
+
+inputs:
+  api_pid:
+    description: "The process ID of the contents-manager API"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Stop contents-manager API
+      shell: bash
+      run: |
+        if [ -n "${{ inputs.api_pid }}" ]; then
+          echo "Stopping API server with PID ${{ inputs.api_pid }}..."
+          kill ${{ inputs.api_pid }} || true
+        elif [ -f api_pid.txt ]; then
+          echo "Stopping API server from pid file..."
+          kill $(cat api_pid.txt) || true
+        else
+          echo "No API PID found to stop."
+        fi
