@@ -19,7 +19,7 @@ export const BlogCard: FC<Props> = ({ title, publishedAt, slug, tags }) => {
 	return (
 		<article className={classes.blogCard}>
 			<Heading level={2}>
-				<NextLink href={`/blogs/${slug}`} className={classes.link}>
+				<NextLink href={`/articles/${slug}`} className={classes.link}>
 					<span className={classes.cardTitle}>{title}</span>
 				</NextLink>
 			</Heading>
