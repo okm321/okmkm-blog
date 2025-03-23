@@ -1,0 +1,10 @@
+@use "shared-styles/global" as g;
+
+.linkList {
+  display: flex;
+  gap: calc(var(--space_base) * 5);
+  align-items: center;
+}
+
+.linkItem {
+}

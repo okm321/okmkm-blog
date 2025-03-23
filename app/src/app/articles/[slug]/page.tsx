@@ -1,10 +1,7 @@
-import { ArticleHeader } from "@/features/article/components/ArticleHeader";
-import { ArticleSkeleton } from "@/features/article/components/ArticleSkeleton";
 import { getArticles } from "@/features/article/utils/getArticles";
 import { getMarkdownContent } from "@/features/article/utils/getMarkdownContent";
-import { MarkdownRenderer } from "@packages/markdown-render";
+import { ArticleDetailView } from "@/features/article/views/ArticleDetailView/ArticleDetailView";
 import type { Metadata } from "next";
-import { Suspense } from "react";
 
 type Props = {
 	params: Promise<{
@@ -43,18 +40,6 @@ export const generateStaticParams = async () => {
 
 export default async function ArticlePage({ params }: Props) {
 	const { slug } = await params;
-	const { content, metadata } = await getMarkdownContent(slug);
 
-	return (
-		<article>
-			<ArticleHeader
-				title={metadata.title}
-				publishedAt={metadata.publishedAt}
-				updatedAt={metadata.updatedAt}
-			/>
-			<Suspense fallback={<ArticleSkeleton />}>
-				<MarkdownRenderer>{content}</MarkdownRenderer>
-			</Suspense>
-		</article>
-	);
+	return <ArticleDetailView slug={slug} />;
 }

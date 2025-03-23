@@ -1,0 +1,15 @@
+@use "shared-styles/global" as g;
+
+.articleFooter {
+  margin: 4rem 0;
+
+  &__hr {
+    border: 2px solid var(--color_hr);
+    margin-bottom: 2rem;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+  }
+}
