@@ -6,11 +6,13 @@ on:
       - main
     paths:
       - "contents-manager/articles/**"
+      - ".github/workflows/contents_update_cicd.yml"
   pull_request:
     branches:
       - main
     paths:
       - "contents-manager/articles/**"
+      - ".github/workflows/contents_update_cicd.yml"
   workflow_dispatch:
 
 concurrency:
@@ -22,6 +24,9 @@ jobs:
     name: Build and Deploy Blog
     runs-on: ubuntu-latest
     environment: Production
+    env: # 環境変数の設定
+      API_BASE_URL: ${{ secrets.API_BASE_URL }}
+      PROJECT_NAME: okmkm-blog
     steps:
       - name: Checkout
         uses: actions/checkout@v4
