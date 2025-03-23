@@ -57,6 +57,11 @@ jobs:
       - name: Build app
         run: pnpm app build
 
+      - name: Stop contents-manager API Server
+        uses: ./.github/actions/stop_contents_manager_api
+        with:
+          api_pid: ${{ steps.start_api.outputs.api_pid }}
+
       - name: Deploy and Comment
         uses: ./.github/actions/deploy_blog_app_to_cloudflare_pages
         with:
@@ -64,8 +69,3 @@ jobs:
           account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           project_name: ${{ env.PROJECT_NAME }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Stop contents-manager API Server
-        uses: ./.github/actions/stop_contents_manager_api
-        with:
-          api_pid: ${{ steps.start_api.outputs.api_pid }}
