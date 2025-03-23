@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
 	},
 	sassOptions: {
 		implementation: "sass-embedded", // sassの代わりにsass-embeddedを使用
+		silenceDeprecations: ["legacy-js-api"],
 	},
 	outputFileTracingRoot: path.join(__dirname, ".."),
 	outputFileTracingIncludes: {
