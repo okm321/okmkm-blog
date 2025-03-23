@@ -7,11 +7,13 @@ on:
       - main
     paths:
       - "app/**"
+      - ".github/blog_cicd.yml"
   pull_request:
     branches:
       - main
     paths:
       - "app/**"
+      - ".github/blog_cicd.yml"
   workflow_dispatch: # 手動実行用のトリガー
 
 # 同時実行制御の設定
@@ -55,6 +57,7 @@ jobs:
     environment: Production
     env:
       API_BASE_URL: ${{ vars.API_BASE_URL }}
+      PROJECT_NAME: okmkm-blog
     steps:
       - name: Checkou
         uses: actions/checkout@v4
@@ -104,6 +107,13 @@ jobs:
 
       - name: Build app
         run: pnpm app build
+
+      - name: Deploy app
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy out --project-name=${{ env.PROJECT_NAME }}
 
       - name: Cleanup - Stop API
         if: always()
