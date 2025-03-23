@@ -7,12 +7,16 @@ on:
       - main
     paths:
       - "app/**"
+      - "contents-manager/articles/**"
+      - "packages/**"
       - ".github/workflows/blog_cicd.yml"
   pull_request:
     branches:
       - main
     paths:
       - "app/**"
+      - "contents-manager/articles/**"
+      - "packages/**"
       - ".github/workflows/blog_cicd.yml"
   workflow_dispatch: # 手動実行用のトリガー
 
@@ -54,6 +58,10 @@ jobs:
     name: Build and Deploy
     needs: ci
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
     environment: Production
     env:
       API_BASE_URL: ${{ vars.API_BASE_URL }}
