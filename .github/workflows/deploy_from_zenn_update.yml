@@ -2,16 +2,12 @@ name: Deploy from Zenn Update
 
 on:
   repository_dispatch:
-    types: [zenn_update]
+    types: [zenn-feed-updated]
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-      pull-requests: write
     environment: Production
     env:
       API_BASE_URL: ${{ vars.API_BASE_URL }}
