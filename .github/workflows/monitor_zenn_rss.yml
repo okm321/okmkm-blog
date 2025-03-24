@@ -33,7 +33,7 @@ jobs:
           go run check_zenn_rss.go
 
       - name: Upload state as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: rss-state-go
           path: .github/scripts/rss-monitor/zenn_rss_state.json
@@ -43,5 +43,5 @@ jobs:
         if: steps.check_rss.outputs.has_changes == 'true'
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.WORKFLOW_PAT }}
+          token: ${{ secrets.ZENN_UPDATED_PAT }}
           event-type: zenn-feed-updated
