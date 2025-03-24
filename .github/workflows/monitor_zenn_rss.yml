@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: rss-state-go
-          path: .github/scripts/rss-monitor/zenn_rss_state.json
+          path: .github/scripts/zenn_rss_monitor/zenn_rss_state.json
           retention-days: 2
 
       - name: Build and deploy when changed
