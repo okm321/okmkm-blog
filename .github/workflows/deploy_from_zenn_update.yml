@@ -1,0 +1,58 @@
+name: Deploy from Zenn Update
+
+on:
+  repository_dispatch:
+    types: [zenn_update]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
+    environment: Production
+    env:
+      API_BASE_URL: ${{ vars.API_BASE_URL }}
+      BASE_URL: ${{ vars.BASE_URL }}
+      PROJECT_NAME: okmkm-blog
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Start contents-manager API Server
+        uses: ./.github/actions/start_contents_manager_api
+        id: start_api
+
+      - name: Build app
+        run: pnpm app build
+
+      - name: Stop contents-manager API Server
+        uses: ./.github/actions/stop_contents_manager_api
+        with:
+          api_pid: ${{ steps.start_api.outputs.api_pid }}
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy out --project-name=${{ env.PROJECT_NAME }} --branch=${{ github.head_ref }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          packageManager: pnpm
+          workingDirectory: app
+          wranglerVersion: 4.3.0
