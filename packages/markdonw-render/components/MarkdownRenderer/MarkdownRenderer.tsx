@@ -34,11 +34,11 @@ export function MarkdownRenderer({ children }: Props) {
 	// return <div>{children}</div>;
 
 	return (
-		<div>
+		<section>
 			<div id="markdown-renderer" className={classes.markdown}>
 				<NodesRenderer nodes={mdastRoot.children} />
 			</div>
 			{/* <FootnotesSection nodes={footnoteDefinitions} /> */}
-		</div>
+		</section>
 	);
 }

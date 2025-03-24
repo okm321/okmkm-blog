@@ -1,5 +1,5 @@
 import { ColorThemeProvider } from "@/providers/ColorThemeProvider";
-import { Noto_Sans_JP, Rubik_Doodle_Shadow } from "next/font/google";
+import { Rubik_Doodle_Shadow } from "next/font/google";
 import "@/styles/styles.scss";
 import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
@@ -11,12 +11,6 @@ import Script from "next/script";
 const RubikDoodleShadowFont = Rubik_Doodle_Shadow({
 	weight: "400",
 	variable: "--font_rubik_doodle_shadow",
-	subsets: ["latin"],
-});
-
-const NotoSansJPFont = Noto_Sans_JP({
-	weight: ["400", "800"],
-	variable: "--font_noto-sans-jp",
 	subsets: ["latin"],
 });
 
@@ -58,9 +52,7 @@ export default function RootLayout({
 					crossOrigin="anonymous"
 				/>
 			</head>
-			<body
-				className={`${RubikDoodleShadowFont.variable} ${NotoSansJPFont.variable}`}
-			>
+			<body className={`${RubikDoodleShadowFont.variable}`}>
 				<ColorThemeProvider>
 					<Layout>
 						<Header />
