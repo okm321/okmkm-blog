@@ -24,7 +24,7 @@ type State struct {
 func main() {
 	// 定数定義
 	const (
-		stateFile  = "rss_state.json"                 // 状態を保存するファイル名
+		stateFile  = "zenn_rss_state.json"            // 状態を保存するファイル名
 		rssURL     = "https://zenn.dev/okmkm321/feed" // 監視対象のRSSフィードURL
 		maxEntries = 3                                // 保存・比較する最大エントリー数
 	)

@@ -37,7 +37,7 @@ jobs:
         with:
           name: rss-state-go
           path: .github/scripts/rss-monitor/zenn_rss_state.json
-          retention-days: 90
+          retention-days: 2
 
       - name: Build and deploy when changed
         if: steps.check_rss.outputs.has_changes == 'true'
