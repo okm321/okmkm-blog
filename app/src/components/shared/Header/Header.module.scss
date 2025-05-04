@@ -1,8 +1,9 @@
-@use 'shared-styles/global' as g;
+@use "shared-styles/global" as g;
 
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 900px;
   margin: 0 auto;
   padding: calc(var(--space_base) * 3);
