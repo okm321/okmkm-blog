@@ -121,7 +121,7 @@ export const HamburgerMenu: FC = () => {
 											rel="noopener noreferrer"
 										>
 											{nav.icon}
-											<span>{nav.title}</span>
+											<span className={classes.menuTitle}>{nav.title}</span>
 										</a>
 									)}
 								</li>
