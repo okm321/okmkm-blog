@@ -31,7 +31,7 @@ const NavigationList: Navigation[] = [
 		),
 	},
 	{
-		title: "zennの一覧",
+		title: "Zennの一覧",
 		path: "/zenn",
 		icon: (
 			<ZennIcon
