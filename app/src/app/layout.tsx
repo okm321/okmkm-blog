@@ -5,6 +5,7 @@ import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
 import { Layout } from "@/components/shared/Layout";
 import { Main } from "@/components/shared/Main";
+import { Preload } from "@/components/shared/Preload";
 import type { Metadata } from "next";
 import Script from "next/script";
 
@@ -51,6 +52,7 @@ export default function RootLayout({
 					type="module"
 					crossOrigin="anonymous"
 				/>
+				<Preload />
 			</head>
 			<body className={`${RubikDoodleShadowFont.variable}`}>
 				<ColorThemeProvider>
