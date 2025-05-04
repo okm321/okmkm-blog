@@ -1,4 +1,4 @@
-import { GlobalNavigation } from "../GlobalNavigation";
+import { HamburgerMenu } from "../HamburgerMenu";
 import { Logo } from "../Logo";
 import { ThemeSwitcher } from "../ThemeSwitcher";
 import classes from "./Header.module.scss";
@@ -8,7 +8,7 @@ export const Header = () => {
 		<header className={classes.header}>
 			<Logo />
 			<ThemeSwitcher />
-			<GlobalNavigation />
+			<HamburgerMenu />
 		</header>
 	);
 };

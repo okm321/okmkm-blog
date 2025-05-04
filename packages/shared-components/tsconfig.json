@@ -3,6 +3,8 @@
 	"compilerOptions": {
 		"paths": {
 			"shared-styles/*": ["../shared-styles/*"]
-		}
-	}
+		},
+		"typeRoots": ["./node_modules/@types", "./"]
+	},
+	"include": ["**/*.ts", "**/*.tsx", "declarations.d.ts"]
 }
