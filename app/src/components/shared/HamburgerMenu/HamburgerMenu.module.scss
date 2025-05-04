@@ -1,0 +1,126 @@
+.mahjongButton {
+  background: var(--color_f-bg-default);
+  border-radius: 0.3rem;
+  box-shadow: 2px 2px 2px 0 var(--color_heading-border);
+  border: 1px solid var(--color_heading-border);
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  transition:
+    transform 0.2s ease-out,
+    box-shadow 0.2s ease-out;
+  transform: translate(-1px, -2px);
+  position: relative;
+  z-index: 101; /* メニューより上に表示 */
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translate(0, 0);
+      box-shadow: 0px 0px 0px 0 var(--color_heading-border);
+    }
+  }
+
+  /* アクティブ状態（メニュー開いている時） */
+  &.active {
+    transform: translate(0, 0);
+    box-shadow: 0px 0px 0px 0 var(--color_heading-border);
+    background: var(--color_f-bg-reverse-default);
+  }
+}
+
+.hamburgerMenu {
+  /* 親コンテナ */
+  position: relative;
+}
+
+.hamburgerMenuImg {
+  background-image: var(--image_hamburger);
+  display: block;
+  width: 30px;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.2s ease;
+
+  @media (max-width: 768px) {
+    width: 25px;
+  }
+
+  .active & {
+    background-image: var(--image_hamburger_active);
+  }
+}
+
+/* ポップアップメニュー */
+.menuPopup {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: var(--color_f-bg-default);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color_heading-border);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 180px;
+  z-index: 100;
+  animation: menuFadeIn 0.2s ease-out;
+  /* overflow: hidden; */
+}
+
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuItem {
+  margin: 0;
+  padding: 0;
+  color: var(--color_f-text-default);
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--color_f-bg-reverse-default);
+    color: var(--color_f-text-reverse-default);
+  }
+
+  &:first-child {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--color_heading-border);
+  }
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.navIcon {
+  width: auto;
+}
+
+/* アニメーション */
+@keyframes menuFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
