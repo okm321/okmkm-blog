@@ -13,7 +13,7 @@ async function highlightWithShiki(
 ): Promise<string> {
 	return codeToHtml(code, {
 		lang,
-		theme: "everforest-dark",
+		theme: "nord",
 		transformers: [
 			transformerNotationDiff(),
 			transformerNotationHighlight(),
@@ -37,11 +37,7 @@ function getFilenameFromMeta(meta: string | null | undefined): string | null {
 	return match ? match[1] : null;
 }
 
-export async function CodeNode({
-	node,
-}: {
-	node: RootContentMap["code"];
-}) {
+export async function CodeNode({ node }: { node: RootContentMap["code"] }) {
 	const lang = node.lang ?? "";
 	const filename = getFilenameFromMeta(node.meta);
 	const highlightedCode = await highlightWithShiki(node.value, lang, filename);

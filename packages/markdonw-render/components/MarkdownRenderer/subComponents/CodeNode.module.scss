@@ -1,12 +1,12 @@
-@use 'shared-styles/global' as g;
+@use "shared-styles/global" as g;
 
 .codeBlock {
   margin: 1.5em 0;
   position: relative;
 
   figcaption {
-    background-color: var(--color_code-block-everforest-bg);
-    color: var(--color_code-block-everforest-text);
+    background-color: var(--color_code-block-bg);
+    color: var(--color_code-block-text);
     width: fit-content;
     padding: 0.5em 1em;
     border-radius: 8px 8px 0 0;
@@ -51,7 +51,7 @@
         background-color: var(--color_code-block-diff-remove-bg);
 
         &:before {
-          content: '-';
+          content: "-";
           color: var(--color_code-block-diff-remove-symbol);
         }
       }
@@ -60,7 +60,7 @@
         background-color: var(--color_code-block-diff-add-bg);
 
         &:before {
-          content: '+';
+          content: "+";
           color: var(--color_code-block-diff-add-symbol);
         }
       }
