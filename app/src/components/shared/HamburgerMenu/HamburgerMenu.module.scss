@@ -14,6 +14,7 @@
   transform: translate(-1px, -2px);
   position: relative;
   z-index: 101; /* メニューより上に表示 */
+  padding-block: 0;
 
   @media (hover: hover) {
     &:hover {

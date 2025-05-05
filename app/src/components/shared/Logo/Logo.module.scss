@@ -1,8 +1,8 @@
-@use 'shared-styles/global' as g;
+@use "shared-styles/global" as g;
 
 .logo {
   // background-image: var(--image_logo);
-  background-image: url('/rounded_face.svg');
+  background-image: url("/rounded_face.png");
   background-repeat: no-repeat;
   font-size: var(--font-size_xxl);
   background-size: 2.5rem;
