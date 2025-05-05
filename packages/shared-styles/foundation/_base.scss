@@ -37,21 +37,21 @@
   --color_table-header-bg: #{g.$grey-100};
   --color_table-border: #{g.$grey-200};
   --color_article-date: #{g.$grey-800};
-  --color_article-border: #{g.$grey-300};
-  --color_article-border-hover: #{g.$grey-900};
+  --color_article-border: #{g.$grey-900};
+  --color_article-border-hover: #{g.$grey-50};
   --color_article-link-card-border: #{g.$grey-300};
   --color_article-link-card-description: #{g.$grey-600};
   --color_article-link-card-url: #{g.$grey-800};
   --color_article-link-card-hover: #{g.$grey-100};
   --color_skeleton-bg: #{g.$grey-200};
   --color_skeleton-wave: #{rgba(g.$grey-400, 0.5)};
-  --color_blog-tag-bg: #{g.$grey-100};
+  --color_blog-tag-bg: #{g.$grey-900};
+  --color_blog-tag-bg-hover: #{g.$grey-50};
 
   --image_logo: url("/myface_light.svg");
   --image_theme-switch: url("/theme-switch_light.svg");
   --image_introduction: url("/big-myface_light.png");
-  --image_hamburger: url("/9pin.svg");
-  --image_hamburger_hover: url("/9pin_dark.svg");
+  --image_hamburger: url("/9pin_dark.svg");
   --image_hamburger_active: url("/5pin_dark.svg");
 
   --shadow_global-nav: 0 2px 4px 0 #{g.$grey-200};
@@ -74,21 +74,21 @@
   --color_table-header-bg: #{g.$grey-800};
   --color_table-border: #{g.$grey-700};
   --color_article-date: #{g.$grey-300};
-  --color_article-border: #{g.$grey-500};
-  --color_article-border-hover: #{g.$grey-50};
+  --color_article-border: #{g.$grey-50};
+  --color_article-border-hover: #{g.$grey-900};
   --color_article-link-card-border: #{g.$grey-500};
   --color_article-link-card-description: #{g.$grey-500};
   --color_article-link-card-url: #{g.$grey-200};
   --color_article-link-card-hover: #{g.$grey-800};
   --color_skeleton-bg: #{g.$grey-700};
   --color_skeleton-wave: #{rgba(g.$grey-300, 0.5)};
-  --color_blog-tag-bg: #{g.$grey-500};
+  --color_blog-tag-bg: #{g.$grey-50};
+  --color_blog-tag-bg-hover: #{g.$grey-900};
 
   --image_logo: url("/myface_dark.svg");
   --image_theme-switch: url("/theme-switch_dark.svg");
   --image_introduction: url("/big-myface_dark.png");
-  --image_hamburger: url("/9pin_dark.svg");
-  --image_hamburger_hover: url("/9pin.svg");
+  --image_hamburger: url("/9pin.svg");
   --image_hamburger_active: url("/5pin.svg");
 
   --shadow_global-nav: 0 2px 4px 0 #{g.$grey-800};
@@ -108,6 +108,7 @@ html {
   color: var(--color_f-text-default);
   transition: background 0.3s;
   font-size: --var(font-size_base);
+  font-family: var(--font_figtree), var(--font_noto_sans_jp), sans-serif;
 
   @media (max-width: 420px) {
     font-size: var(--font-size_s);

@@ -1,5 +1,5 @@
 import { ColorThemeProvider } from "@/providers/ColorThemeProvider";
-import { Rubik_Doodle_Shadow } from "next/font/google";
+import { Figtree, Noto_Sans_JP, Rubik_Doodle_Shadow } from "next/font/google";
 import "@/styles/styles.scss";
 import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
@@ -12,6 +12,18 @@ import Script from "next/script";
 const RubikDoodleShadowFont = Rubik_Doodle_Shadow({
 	weight: "400",
 	variable: "--font_rubik_doodle_shadow",
+	subsets: ["latin"],
+});
+
+const NotoSansJPFont = Noto_Sans_JP({
+	weight: ["400", "700"],
+	variable: "--font_noto_sans_jp",
+	subsets: ["latin"],
+});
+
+const FigtreeFont = Figtree({
+	weight: ["400", "700"],
+	variable: "--font_figtree",
 	subsets: ["latin"],
 });
 
@@ -54,7 +66,9 @@ export default function RootLayout({
 				/>
 				<Preload />
 			</head>
-			<body className={`${RubikDoodleShadowFont.variable}`}>
+			<body
+				className={`${RubikDoodleShadowFont.variable} ${NotoSansJPFont.variable} ${FigtreeFont.variable} ${RubikDoodleShadowFont.className} ${NotoSansJPFont.className} ${FigtreeFont.className}`}
+			>
 				<ColorThemeProvider>
 					<Layout>
 						<Header />

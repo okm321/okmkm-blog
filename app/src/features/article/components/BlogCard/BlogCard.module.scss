@@ -1,4 +1,4 @@
-@use 'shared-styles/global' as g;
+@use "shared-styles/global" as g;
 
 .blogCard {
   display: flex;
@@ -7,17 +7,29 @@
   border: 2px solid var(--color_article-border);
   overflow: hidden;
   position: relative;
-  transition: all 0.5s;
+  transition: all 0.3s;
 
   &:has(.link:focus-visible) {
     outline-offset: 0.5rem;
     outline: 2px solid var(--color_outline);
   }
 
+  /* リンクホバー時のカード全体の変化を検知 */
   @media (hover: hover) {
-    &:hover {
-      border: 2px solid var(--color_article-border-hover);
-      box-shadow: var(--shadow_global-nav);
+    &:has(.link:hover) {
+      box-shadow: 0 0 8px 0px var(--color_f-text-default);
+    }
+    &:has(.link:hover) .metadata {
+      border-top-color: var(--color_article-border-hover);
+      color: var(--color_f-text-reverse-default);
+
+      .tag {
+        background-color: var(--color_article-border-hover);
+        color: var(--color_f-text-default);
+      }
+    }
+    &:has(.link:hover) .cardTitle {
+      color: var(--color_f-text-reverse-default);
     }
   }
 
@@ -39,12 +51,34 @@
   font-weight: bold;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 0;
+    aspect-ratio: 1/1;
+    transition: width 0.3s ease-out;
+    z-index: -1;
+    background-color: var(--color_f-bg-reverse-default);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &:after {
+        width: 120%;
+      }
+    }
   }
 
   &:focus-visible {
@@ -52,24 +86,34 @@
   }
 }
 
+.cardTitle {
+  transition: color 0.3s ease;
+}
+
 .tagList {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .tag {
-  font-size: var(--font-size_xs);
+  font-size: var(--font-size_xxs);
   padding: 0.3rem 0.5rem;
-  border: 1px solid var(--color_article-border);
   border-radius: 0.3rem;
-  margin-bottom: 0.5rem;
   background-color: var(--color_blog-tag-bg);
+  color: var(--color_f-text-reverse-default);
 }
 
 .metadata {
-  border-top: 1px solid var(--color_article-border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  border-top: 2px solid var(--color_article-border);
   padding: 1rem;
   text-align: center;
-  font-size: var(--font-size_s);
+  font-size: var(--font-size_xs);
+  transition:
+    border-top-color 0.3s ease,
+    color 0.3s ease;
 }

@@ -24,6 +24,7 @@ export const BlogCard: FC<Props> = ({ title, publishedAt, slug, tags }) => {
 				</NextLink>
 			</Heading>
 			<div className={classes.metadata}>
+				<time>{formatDate(publishedAt, "yyyy/MM/dd")}</time>
 				<ul className={classes.tagList}>
 					{tags.map((tag) => {
 						return (
@@ -33,7 +34,6 @@ export const BlogCard: FC<Props> = ({ title, publishedAt, slug, tags }) => {
 						);
 					})}
 				</ul>
-				<time>{formatDate(publishedAt, "yyyy/MM/dd")}</time>
 			</div>
 		</article>
 	);

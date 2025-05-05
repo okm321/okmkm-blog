@@ -1,4 +1,4 @@
-@use 'shared-styles/global' as g;
+@use "shared-styles/global" as g;
 
 .zennCard {
   display: flex;
@@ -15,9 +15,12 @@
   }
 
   @media (hover: hover) {
-    &:hover {
-      border: 2px solid var(--color_article-border-hover);
-      box-shadow: var(--shadow_global-nav);
+    &:has(.link:hover) {
+      box-shadow: 0 0 8px 0px var(--color_f-text-default);
+    }
+    &:has(.link:hover) .metadata {
+      border-top-color: var(--color_article-border-hover);
+      color: var(--color_f-text-reverse-default);
     }
   }
 
@@ -28,12 +31,34 @@
 
 .link {
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    transition: width 0.3s ease-out;
+    z-index: -1;
+    background-color: var(--color_f-bg-reverse-default);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &:after {
+        width: 120%;
+      }
+    }
   }
 
   &:focus-visible {
@@ -42,8 +67,9 @@
 }
 
 .metadata {
-  border-top: 1px solid var(--color_article-border);
+  border-top: 2px solid var(--color_article-border);
   padding: 1rem;
+  font-weight: bold;
   text-align: center;
-  font-size: var(--font-size_s);
+  font-size: var(--font-size_xs);
 }
