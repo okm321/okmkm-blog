@@ -1,8 +1,8 @@
 .mahjongButton {
   background: var(--color_hamburger-menu-bg);
   border-radius: 0.3rem;
-  box-shadow: 2px 2px 2px 0 var(--color_heading-border);
-  border: 1px solid var(--color_heading-border);
+  box-shadow: 2px 2px 0px 0 var(--color_hamburger-shadow);
+  border: 2px solid var(--color_hamburger-border);
   aspect-ratio: 3 / 4;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
   transition:
     transform 0.2s ease-out,
     box-shadow 0.2s ease-out;
-  transform: translate(-1px, -2px);
+  transform: translate(-2px, -2px);
   position: relative;
   z-index: 101; /* メニューより上に表示 */
   padding-block: 0;

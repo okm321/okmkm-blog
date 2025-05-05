@@ -19,7 +19,6 @@
       box-shadow: 0 0 8px 0px var(--color_f-text-default);
     }
     &:has(.link:hover) .metadata {
-      border-top-color: var(--color_article-border-hover);
       color: var(--color_f-text-reverse-default);
     }
   }
