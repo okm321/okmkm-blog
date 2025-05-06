@@ -1,7 +1,7 @@
 .switch {
   position: absolute;
   width: 3.2rem;
-  height: 100%;
+  aspect-ratio: 3/4;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -12,9 +12,13 @@
     width: 2.8rem;
   }
 
+  @media (max-width: 375px) {
+    left: 65%;
+  }
+
   /* 背景画像を表示する疑似要素 */
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -26,20 +30,28 @@
     z-index: 2;
   }
 
+  &:after {
+    content: "";
+    position: absolute;
+    aspect-ratio: 1;
+    width: 0rem;
+    border-radius: 50%;
+    background-color: var(--color_f-bg-theme-switcher);
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
   @media (hover: hover) {
     &:hover {
+      z-index: 1;
+      &:before {
+        background-image: var(--image_theme-switch-reverse);
+      }
       &::after {
-        content: '';
-        position: absolute;
-        width: 0px;
-        height: 0px;
-        border-radius: 50%;
-        background-color: var(--color_f-bg-theme-switcher);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        width: 3.5rem;
         box-shadow: var(--shadow_theme-switcher);
-        z-index: 1;
+        transition: all 0.3s;
       }
     }
   }
