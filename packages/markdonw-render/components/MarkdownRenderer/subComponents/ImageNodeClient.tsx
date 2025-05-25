@@ -2,8 +2,8 @@
 
 import type { RootContentMap } from "mdast";
 import { type FC, useEffect, useState } from "react";
-import { createPortal } from "react-dom";
 import { isMobile } from "react-device-detect";
+import { createPortal } from "react-dom";
 import classes from "./ImageNodeClient.module.scss";
 
 export const ImageNodeClient: FC<{ node: RootContentMap["image"] }> = ({
