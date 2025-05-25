@@ -3,6 +3,7 @@ import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import { remarkLinkCard } from "../../lib/remark-link-card";
 import classes from "./MarkdownRenderer.module.scss";
+import { ZoomedImagePortal } from "./subComponents/ImageNodeClient";
 import { NodesRenderer } from "./subComponents/NodesRenderer";
 
 const parseMarkdown = remark().use(remarkGfm).use(remarkLinkCard);
@@ -34,11 +35,14 @@ export function MarkdownRenderer({ children }: Props) {
 	// return <div>{children}</div>;
 
 	return (
-		<section>
-			<div id="markdown-renderer" className={classes.markdown}>
-				<NodesRenderer nodes={mdastRoot.children} />
-			</div>
-			{/* <FootnotesSection nodes={footnoteDefinitions} /> */}
-		</section>
+		<>
+			<section>
+				<div id="markdown-renderer" className={classes.markdown}>
+					<NodesRenderer nodes={mdastRoot.children} />
+				</div>
+				{/* <FootnotesSection nodes={footnoteDefinitions} /> */}
+			</section>
+			<ZoomedImagePortal />
+		</>
 	);
 }

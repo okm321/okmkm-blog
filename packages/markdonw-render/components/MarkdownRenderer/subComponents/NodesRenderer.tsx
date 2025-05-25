@@ -67,10 +67,6 @@ export const NodesRenderer: FC<{ nodes: RootContent[] }> = ({ nodes }) => {
 			case "html": {
 				return <HTMLNode key={`${node.type}-${index}`} node={node} />;
 			}
-			// case "link-card": {
-			// 	//  @ts-ignore Server Component
-			// 	return <LinkCard key={`${node.type}-${index}`} node={node} />;
-			// }
 			case "link-card": {
 				return (
 					<Suspense fallback={<LinkCardSkeleton />}>

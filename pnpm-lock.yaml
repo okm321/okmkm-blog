@@ -204,6 +204,9 @@ importers:
       '@types/react':
         specifier: ^18.3.18
         version: 18.3.18
+      '@types/react-dom':
+        specifier: ^18
+        version: 18.3.5(@types/react@18.3.18)
 
   packages/shared-components:
     dependencies:
