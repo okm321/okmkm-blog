@@ -12,21 +12,11 @@
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
-		"ignore": [
-			".next",
-			"node_modules",
-			".terraform",
-			"out"
-		]
+		"ignore": [".next", "node_modules", ".terraform", "out"]
 	},
 	"organizeImports": {
 		"enabled": true,
-		"ignore": [
-			".next",
-			"node_modules",
-			".terraform",
-			"out"
-		]
+		"ignore": [".next", "node_modules", ".terraform", "out"]
 	},
 	"linter": {
 		"enabled": true,
@@ -36,12 +26,7 @@
 				"noUnusedImports": "error"
 			}
 		},
-		"ignore": [
-			".next",
-			"node_modules",
-			".terraform",
-			"out"
-		]
+		"ignore": [".next", "node_modules", ".terraform", "out"]
 	},
 	"javascript": {
 		"formatter": {
