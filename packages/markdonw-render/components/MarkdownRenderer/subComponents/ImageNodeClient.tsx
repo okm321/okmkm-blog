@@ -48,8 +48,6 @@ export const ImageNodeClient: FC<{ node: RootContentMap["image"] }> = ({
 						handleImageClick();
 					}
 				}}
-				role="button"
-				tabIndex={0}
 				aria-label={`${node.alt || "画像"}を拡大表示`}
 			/>
 			{isZoomed &&
@@ -69,5 +67,5 @@ export const ImageNodeClient: FC<{ node: RootContentMap["image"] }> = ({
 };
 
 export const ZoomedImagePortal: FC = () => {
-	return <div id="img-zoom-overlay"></div>;
+	return <div id="img-zoom-overlay" />;
 };
