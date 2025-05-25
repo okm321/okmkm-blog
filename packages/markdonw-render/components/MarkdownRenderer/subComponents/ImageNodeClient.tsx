@@ -53,7 +53,15 @@ export const ImageNodeClient: FC<{ node: RootContentMap["image"] }> = ({
 			{isZoomed &&
 				el &&
 				createPortal(
-					<div className={classes.zoomOverlay} onClick={handleCloseZoom}>
+					<div
+						className={classes.zoomOverlay}
+						onClick={handleCloseZoom}
+						onKeyDown={(e) => {
+							if (e.key === "Escape") {
+								handleCloseZoom();
+							}
+						}}
+					>
 						<img
 							src={node.url}
 							alt={node.alt ?? ""}
