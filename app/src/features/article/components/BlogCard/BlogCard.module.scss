@@ -18,20 +18,22 @@
   @media (hover: hover) {
     &:has(.link:hover) {
       box-shadow: 0 0 8px 0px var(--color_f-text-default);
-      border-color: var(--color_article-border-hover);
+      /* border-color: var(--color_article-border-hover); */
     }
-    &:has(.link:hover) .metadata {
-      border-top-color: var(--color_article-border-hover);
-      color: var(--color_f-text-reverse-default);
 
-      .tag {
-        background-color: var(--color_article-border-hover);
-        color: var(--color_f-text-default);
-      }
-    }
-    &:has(.link:hover) .cardTitle {
-      color: var(--color_f-text-reverse-default);
-    }
+    /* &:has(.link:hover) .metadata { */
+    /* border-top-color: var(--color_article-border-hover); */
+    /* color: var(--color_f-text-reverse-default); */
+
+    /* .tag { */
+    /*   background-color: var(--color_article-border-hover); */
+    /*   color: var(--color_f-text-default); */
+    /* } */
+    /* } */
+
+    /* &:has(.link:hover) .cardTitle { */
+    /*   color: var(--color_f-text-reverse-default); */
+    /* } */
   }
 
   &:not(:hover) {
@@ -60,27 +62,27 @@
     height: calc(100% + 4px);
   }
 
-  &:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    width: 0;
-    aspect-ratio: 1/1;
-    transition: width 0.3s ease-out;
-    z-index: -1;
-    background-color: var(--color_f-bg-reverse-default);
-  }
+  /* &:after { */
+  /*   content: ""; */
+  /*   position: absolute; */
+  /*   top: 50%; */
+  /*   left: 50%; */
+  /*   transform: translate(-50%, -50%); */
+  /*   border-radius: 50%; */
+  /*   width: 0; */
+  /*   aspect-ratio: 1/1; */
+  /*   transition: width 0.3s ease-out; */
+  /*   z-index: -1; */
+  /*   background-color: var(--color_f-bg-reverse-default); */
+  /* } */
 
-  @media (hover: hover) {
-    &:hover {
-      &:after {
-        width: 120%;
-      }
-    }
-  }
+  /* @media (hover: hover) { */
+  /*   &:hover { */
+  /*     &:after { */
+  /*       width: 120%; */
+  /*     } */
+  /*   } */
+  /* } */
 
   &:focus-visible {
     outline: none;
