@@ -1,6 +1,10 @@
 .layout {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
   min-height: 100dvh;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
+  display: flex;
+  flex-direction: column;
 }

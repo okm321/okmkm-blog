@@ -70,11 +70,11 @@ export default function RootLayout({
 				className={`${RubikDoodleShadowFont.variable} ${NotoSansJPFont.variable} ${FigtreeFont.variable} ${RubikDoodleShadowFont.className} ${NotoSansJPFont.className} ${FigtreeFont.className}`}
 			>
 				<ColorThemeProvider>
-					<Layout>
-						<Header />
-						<Main>{children}</Main>
-						<Footer />
-					</Layout>
+					<Layout
+						header={<Header />}
+						main={<Main>{children}</Main>}
+						footer={<Footer />}
+					/>
 				</ColorThemeProvider>
 			</body>
 		</html>

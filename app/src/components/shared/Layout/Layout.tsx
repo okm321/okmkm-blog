@@ -1,6 +1,20 @@
-import type { FC, PropsWithChildren } from "react";
+import type { FC, ReactNode } from "react";
 import classes from "./Layout.module.scss";
 
-export const Layout: FC<PropsWithChildren> = ({ children }) => {
-	return <div className={classes.layout}>{children}</div>;
+type LayoutProps = {
+	header: ReactNode;
+	main: ReactNode;
+	footer: ReactNode;
+};
+
+export const Layout: FC<LayoutProps> = ({ header, main, footer }) => {
+	return (
+		<div className={classes.layout}>
+			<div className={classes.content}>
+				{header}
+				{main}
+			</div>
+			{footer}
+		</div>
+	);
 };

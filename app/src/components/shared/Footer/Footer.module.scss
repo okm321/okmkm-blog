@@ -1,5 +1,127 @@
 .footer {
+  /* Use shared black across themes */
+  background: #1e1e1e;
+  color: #f8f8f8;
+  padding: 2.25rem 1rem 1rem;
+  width: 100%;
+  border-top: 1px solid rgba(248, 248, 248, 0.12);
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: var(--font-size_s);
+  letter-spacing: 0.02em;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+.brandBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-size_l);
+  font-weight: 700;
+  font-family: var(--font_rubik_doodle_shadow), var(--font_noto_sans_jp), sans-serif;
+  min-height: 3.75rem; /* ヘッダーと同じ高さを確保 */
+  padding-left: 3rem;
+  background-image: url("/rounded_face.png");
+  background-repeat: no-repeat;
+  background-size: 2.5rem;
+  background-position: left center;
+}
+
+.copy {
+  color: rgba(248, 248, 248, 0.72);
   font-size: var(--font-size_xs);
   text-align: center;
-  padding: 0.5rem 0;
+  width: 100%;
+  margin: 0;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.6rem;
+  }
+}
+
+.link {
+  color: #f8f8f8;
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.35;
+  padding-bottom: 0.25rem;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.05rem;
+    width: 100%;
+    height: 2px;
+    background: #f8f8f8;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover:after,
+  &:focus-visible:after {
+    transform: scaleX(1);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #f8f8f8;
+    outline-offset: 4px;
+  }
+}
+
+.linkLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.externalIcon {
+  width: 0.9rem;
+  height: 0.9rem;
+  display: inline-block;
+  background: url("/external_link.png") no-repeat center center / contain;
+  filter: brightness(1.05);
 }
