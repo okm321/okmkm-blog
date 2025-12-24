@@ -42,12 +42,14 @@
     transform: translate(-50%, 0);
   }
 
-  @media (hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
       z-index: 1;
+
       &:before {
         background-image: var(--image_theme-switch-reverse);
       }
+
       &::after {
         width: 3.5rem;
         box-shadow: var(--shadow_theme-switcher);
