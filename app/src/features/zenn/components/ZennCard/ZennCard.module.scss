@@ -14,7 +14,7 @@
     outline: 2px solid var(--color_outline);
   }
 
-  @media (hover: hover) {
+  @media (any-hover: hover) and (pointer: fine) {
     &:has(.link:hover) {
       box-shadow: 0 0 8px 0px var(--color_f-text-default);
       /* border-color: var(--color_article-border-hover); */

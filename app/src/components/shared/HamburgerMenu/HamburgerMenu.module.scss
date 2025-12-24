@@ -16,7 +16,7 @@
   z-index: 101; /* メニューより上に表示 */
   padding-block: 0;
 
-  @media (hover: hover) {
+  @media (any-hover: hover) and (pointer: fine) {
     &:hover {
       transform: translate(0, 0);
       box-shadow: 0px 0px 0px 0 var(--color_heading-border);

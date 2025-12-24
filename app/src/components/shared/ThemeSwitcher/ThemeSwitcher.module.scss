@@ -42,7 +42,7 @@
     transform: translate(-50%, 0);
   }
 
-  @media (hover: hover) and (pointer: fine) {
+  @media (any-hover: hover) and (pointer: fine) {
     &:hover {
       z-index: 1;
 
