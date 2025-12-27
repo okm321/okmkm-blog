@@ -66,6 +66,7 @@ jobs:
     env:
       API_BASE_URL: ${{ vars.API_BASE_URL }}
       BASE_URL: ${{ vars.BASE_URL }}
+      GTM_ID: ${{ vars.GTM_ID }}
       PROJECT_NAME: okmkm-blog
     steps:
       - name: Checkout
