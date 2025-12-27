@@ -29,6 +29,7 @@
       width: fit-content;
       min-width: 100%;
       line-height: 1.4;
+      font-size: var(--font-size_base);
 
       @media (max-width: 768px) {
         font-size: var(--font-size_s);

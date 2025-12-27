@@ -24,9 +24,16 @@
   &__title {
     font-weight: bold;
     font-size: var(--font-size_l);
+    // 2行目から3点リーダー
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 
     @media (max-width: 768px) {
-      font-size: var(--font-size_s);
+      font-size: var(--font-size_m);
     }
   }
 
@@ -60,16 +67,15 @@
 }
 
 .linkCardImage {
-  max-width: 260px;
   height: 150px;
+  max-width: 100%;
 
   @media (max-width: 768px) {
-    max-width: 135px;
-    height: 100px;
+    display: none;
   }
 
   >img {
-    object-fit: cover;
+    object-fit: fill;
     width: 100%;
     height: 100%;
   }
