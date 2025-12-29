@@ -6,7 +6,7 @@ import { Header } from "@/components/shared/Header";
 import { Layout } from "@/components/shared/Layout";
 import { Main } from "@/components/shared/Main";
 import { Preload } from "@/components/shared/Preload";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import Script from "next/script";
 
@@ -65,7 +65,7 @@ export default function RootLayout({
 					type="module"
 					crossOrigin="anonymous"
 				/>
-				<GoogleTagManager gtmId={process.env.GTM_ID as string} />
+				<GoogleAnalytics gaId={process.env.GTM_ID as string} />
 				<Preload />
 			</head>
 			<body
