@@ -66,6 +66,8 @@ export default function RootLayout({
 					crossOrigin="anonymous"
 				/>
 				<Preload />
+				<GoogleAnalytics gaId={process.env.GA_ID as string} />
+				<GoogleTagManager gtmId={process.env.GTM_ID as string} />
 			</head>
 			<body
 				className={`${RubikDoodleShadowFont.variable} ${NotoSansJPFont.variable} ${FigtreeFont.variable} ${RubikDoodleShadowFont.className} ${NotoSansJPFont.className} ${FigtreeFont.className}`}
@@ -78,8 +80,6 @@ export default function RootLayout({
 					/>
 				</ColorThemeProvider>
 			</body>
-			<GoogleAnalytics gaId={process.env.GA_ID as string} />
-			<GoogleTagManager gtmId={process.env.GTM_ID as string} />
 		</html>
 	);
 }
