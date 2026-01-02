@@ -1,6 +1,8 @@
 import { getArticles } from "@/features/article/utils/getArticles";
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const defaultPages: MetadataRoute.Sitemap = [
 		{
