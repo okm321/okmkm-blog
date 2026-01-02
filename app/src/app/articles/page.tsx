@@ -1,6 +1,7 @@
 import { ArticleIndex } from "@/features/article/views/ArticleIndex";
+import type { Metadata } from "next";
 
-export const generateMetadata = () => {
+export const generateMetadata = (): Metadata => {
 	return {
 		title: "記事一覧",
 		description: "記事の一覧です。",
