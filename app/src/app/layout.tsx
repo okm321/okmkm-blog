@@ -65,8 +65,6 @@ export default function RootLayout({
 					type="module"
 					crossOrigin="anonymous"
 				/>
-				<GoogleAnalytics gaId={process.env.GA_ID as string} />
-				<GoogleTagManager gtmId={process.env.GTM_ID as string} />
 				<Preload />
 			</head>
 			<body
@@ -80,6 +78,8 @@ export default function RootLayout({
 					/>
 				</ColorThemeProvider>
 			</body>
+			<GoogleAnalytics gaId={process.env.GA_ID as string} />
+			<GoogleTagManager gtmId={process.env.GTM_ID as string} />
 		</html>
 	);
 }
