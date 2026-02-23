@@ -53,29 +53,24 @@ Vercel の自動デプロイ機能を使わず、GitHub Actions + Vercel CLI で
 
 ### アーキテクチャ
 
-```
-┌─────────────────────────────────────────────────────────┐
-│ Vercel                                                  │
-├─────────────────────────────────────────────────────────┤
-│ hanasho-ec-web (メインプロジェクト)                      │
-│   ├── Production → main ブランチ                        │
-│   └── Custom Environment (stg) → stg ブランチ           │
-├─────────────────────────────────────────────────────────┤
-│ hanasho-ec-web-dev (別プロジェクト)                      │
-│   └── Production → dev ブランチ                         │
-└─────────────────────────────────────────────────────────┘
+**Vercel プロジェクト構成**
 
-┌─────────────────────────────────────────────────────────┐
-│ GitHub Environments                                     │
-├─────────────────────────────────────────────────────────┤
-│ dev          → CD 用（hanasho-ec-web-dev の secrets）   │
-│ stg          → CD 用                                    │
-│ production   → CD 用                                    │
-│ preview-dev  → Preview 用（dev 環境の secrets）         │
-│ preview-stg  → Preview 用                               │
-│ preview-prd  → Preview 用                               │
-└─────────────────────────────────────────────────────────┘
-```
+| プロジェクト | 環境 | 対応ブランチ |
+|-------------|------|-------------|
+| hanasho-ec-web（メイン） | Production | main |
+| hanasho-ec-web（メイン） | Custom Environment (stg) | stg |
+| hanasho-ec-web-dev（別プロジェクト） | Production | dev |
+
+**GitHub Environments 構成**
+
+| Environment | 用途 | 備考 |
+|------------|------|------|
+| dev | CD 用 | hanasho-ec-web-dev の secrets |
+| stg | CD 用 | |
+| production | CD 用 | |
+| preview-dev | Preview 用 | dev 環境の secrets |
+| preview-stg | Preview 用 | |
+| preview-prd | Preview 用 | |
 
 ### ポイント
 
